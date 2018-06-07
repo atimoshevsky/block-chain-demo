@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Blockchain demo!';
-  activeItem = 'Block';
+  activeItem = 'Hash';
 
 
   toggleItem(item: string): void {

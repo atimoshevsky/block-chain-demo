@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as CryptoJS from 'crypto-js';
 
 @Component({
   selector: 'app-hash',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HashComponent implements OnInit {
 
+  userData = '';
   constructor() { }
 
   ngOnInit() {
   }
 
+  getSHA256(): string {
+    return CryptoJS.SHA256(this.userData).toString();
+  }
 }

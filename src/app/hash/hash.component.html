@@ -1,3 +1,11 @@
-<p>
-  hash works!
-</p>
+<div class="hash-container">
+  SHA256
+
+<mat-form-field>
+  <textarea matInput placeholder="Data" [(ngModel)]='userData'></textarea>
+</mat-form-field>
+
+<mat-form-field>
+    <input matInput placeholder="Hash" value="{{getSHA256()}}" readonly  >
+  </mat-form-field>
+</div>
