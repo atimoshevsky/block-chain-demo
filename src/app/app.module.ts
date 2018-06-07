@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -8,15 +9,18 @@ import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 import { FormsModule } from '@angular/forms';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
-import { AppBlockComponent } from './block/app-block.component';
+import { BlockComponent } from './block/block.component';
+import { HashComponent } from './hash/hash.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    AppBlockComponent
+    BlockComponent,
+    HashComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     FormsModule,
     BrowserAnimationsModule,
@@ -26,8 +30,8 @@ import { AppBlockComponent } from './block/app-block.component';
     MatCheckboxModule,
     MatIconModule,
     RouterModule.forRoot([
-      { path: 'block', component: AppBlockComponent},
-      { path: 'hash', component: AppBlockComponent},
+      { path: 'block', component: BlockComponent},
+      { path: 'hash', component: HashComponent},
       { path: '', redirectTo: 'welcome', pathMatch: 'full'},
       { path: '**', redirectTo: 'welcome', pathMatch: 'full'}
     ])
