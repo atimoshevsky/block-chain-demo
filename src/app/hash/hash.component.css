@@ -1,9 +1,14 @@
 .hash-container {
-    margin-left: 10%;
+    margin-left: 5%;
     display: flex;
     flex-direction: column;
+    width: 90%;
   }
   
   .hash-container > * {
     width: 50%;
+  }
+
+  .hash-container input{
+    width: 100%
   }

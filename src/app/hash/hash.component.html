@@ -1,11 +1,12 @@
 <div class="hash-container">
-  SHA256
+  SHA256 Hash
 
-<mat-form-field>
-  <textarea matInput placeholder="Data" [(ngModel)]='userData'></textarea>
+<mat-form-field appearance="outline">
+  <textarea matInput placeholder="Data" [(ngModel)]='userData' rows="10"></textarea>
 </mat-form-field>
 
-<mat-form-field>
-    <input matInput placeholder="Hash" value="{{getSHA256()}}" readonly  >
+<mat-form-field appearance="outline">
+    <input matInput placeholder="Hash" value="{{getSHA256()}}" >
+    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
   </mat-form-field>
 </div>
