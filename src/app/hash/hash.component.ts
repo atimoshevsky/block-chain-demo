@@ -7,7 +7,6 @@ import * as CryptoJS from 'crypto-js';
   styleUrls: ['./hash.component.css']
 })
 export class HashComponent implements OnInit {
-
   userData = '';
   constructor() { }
 

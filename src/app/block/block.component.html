@@ -1,4 +1,24 @@
-<div class="validBlock">
-    <label title="Data">Data</label>
-    <input type="text" value="">
-</div>
+<div class="block-container">
+        <h3>Block</h3>
+        <br/>
+ <mat-form-field appearance="legacy">
+        <input matInput placeholder="Block" value="#1" readonly>
+  </mat-form-field>
+
+  <mat-form-field appearance="legacy">
+        <input matInput placeholder="Nonce">
+      </mat-form-field>
+
+  <mat-form-field appearance="legacy">
+    <textarea matInput placeholder="Data" [(ngModel)]='userData' rows="10"></textarea>
+  </mat-form-field>
+  
+  <mat-form-field appearance="outline">
+      <input matInput placeholder="Block" value="{{getSHA256()}}" readonly >
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary">Mine</button>
+  </div>
+  
+  

@@ -3,12 +3,26 @@
     display: flex;
     flex-direction: column;
     width: 90%;
+   
   }
   
   .hash-container > * {
-    width: 50%;
+    width: 70%;
   }
 
   .hash-container input{
     width: 100%
+  }
+
+  .hash-right-align{
+        text-align: right;
+  }
+
+  input.hash-right-alig::-webkit-outer-spin-button,
+  input.hash-right-alig::-webkit-inner-spin-button {
+    display: none;
+  }
+  
+  input.hash-right-alig {
+    -moz-appearance: textfield;
   }
