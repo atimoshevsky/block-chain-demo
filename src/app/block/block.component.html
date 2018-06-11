@@ -1,24 +1,23 @@
 <div class="block-container">
-        <h3>Block</h3>
-        <br/>
- <mat-form-field appearance="legacy">
-        <input matInput placeholder="Block" value="#1" readonly>
+  <h3>Block</h3>
+  <br/>
+  <mat-form-field appearance="legacy">
+      <span matPrefix>#1 &nbsp;</span>
+    <input matInput placeholder="Block" readonly>
   </mat-form-field>
 
   <mat-form-field appearance="legacy">
-        <input matInput placeholder="Nonce">
-      </mat-form-field>
+    <input matInput placeholder="Nonce"  value="{{nonce}}" readonly>
+  </mat-form-field>
 
   <mat-form-field appearance="legacy">
-    <textarea matInput placeholder="Data" [(ngModel)]='userData' rows="10"></textarea>
+    <textarea matInput placeholder="Data" (keyup)="userDataChange()"  [(ngModel)]='userData' rows="10"></textarea>
   </mat-form-field>
-  
+
   <mat-form-field appearance="outline">
-      <input matInput placeholder="Block" value="{{getSHA256()}}" readonly >
-      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-    </mat-form-field>
+    <input matInput placeholder="Hash"  value="{{hash}}" readonly >
+    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+  </mat-form-field>
 
-    <button mat-raised-button color="primary">Mine</button>
-  </div>
-  
-  
+  <button mat-raised-button color="primary" (click)="onMine()">Mine</button>
+</div>
