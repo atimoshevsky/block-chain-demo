@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import * as CryptoJS from 'crypto-js';
+import { Block } from '../../core/block';
+
 
 
 @Component({
@@ -10,35 +11,49 @@ import * as CryptoJS from 'crypto-js';
 export class BlockComponent implements OnInit {
   userData = '';
   hash = '';
-  nonce = 252196;
+  emptyNonce = 129039;
+  nonce = this.emptyNonce.toString();
+  timestamp = '11/06/2018';
+  difficulty = 4;
+  sentiment = 'sentiment_very_satisfied';
   constructor() { }
 
   ngOnInit() {
-    this.hash = this.getSHA256(252196);
-  }
-
-  getSHA256(nonce: number): string {
-    return CryptoJS.SHA256('11/06/2018' + JSON.stringify(this.userData) + nonce).toString();
+    const block = new Block(0, this.timestamp, '');
+    this.hash = block.calculateHash(this.emptyNonce);
   }
 
   onMine(): void {
-    this.mineBlock(4);
+    this.mineBlock();
   }
 
   userDataChange() {
-   this.hash = this.getSHA256(0);
-   this.nonce = 0;
+    const block = new Block(0, this.timestamp, this.userData);
+    this.hash = block.calculateHash(0);
+    if (this.isMeetDifficulty(this.hash, 0)) {
+      this.sentiment = 'sentiment_very_satisfied';
+      this.nonce = '0';
+    } else {
+      this.sentiment = 'sentiment_very_dissatisfied';
+      this.nonce = '';
+    }
   }
 
-  mineBlock(difficulty: number) {
+  mineBlock() {
     let nonce = 0;
-    let hash = this.getSHA256(nonce);
+    const block = new Block(0, this.timestamp, this.userData);
+    let hash = block.calculateHash(nonce);
 
-    while (hash.substring(0, difficulty) !== Array(difficulty + 1).join('0')) {
+    while (!this.isMeetDifficulty(hash, this.difficulty)) {
       nonce++;
-      hash = this.getSHA256(nonce);
+      hash = block.calculateHash(nonce);
     }
     this.hash = hash;
-    this.nonce = nonce;
+    this.nonce = nonce.toString();
+    this.sentiment = 'sentiment_very_satisfied';
+  }
+
+  isMeetDifficulty(hash: string, difficulty: number): boolean {
+    return hash.substring(0, this.difficulty) === Array(this.difficulty + 1).join('0');
   }
 }

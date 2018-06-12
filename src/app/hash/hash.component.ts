@@ -13,7 +13,7 @@ export class HashComponent implements OnInit {
   ngOnInit() {
   }
 
-  getSHA256(): string {
+   getSHA256(): string {
     return CryptoJS.SHA256(this.userData).toString();
   }
 }
