@@ -16,6 +16,7 @@ export class BlockComponent implements OnInit {
   timestamp = '11/06/2018';
   difficulty = 4;
   sentiment = 'sentiment_very_satisfied';
+  mined = true;
   constructor() { }
 
   ngOnInit() {
@@ -25,6 +26,7 @@ export class BlockComponent implements OnInit {
 
   onMine(): void {
     this.mineBlock();
+    this.mined = true;
   }
 
   userDataChange() {
@@ -33,8 +35,10 @@ export class BlockComponent implements OnInit {
     if (this.isMeetDifficulty(this.hash, 0)) {
       this.sentiment = 'sentiment_very_satisfied';
       this.nonce = '0';
+      this.mined = true;
     } else {
       this.sentiment = 'sentiment_very_dissatisfied';
+      this.mined = false;
       this.nonce = '';
     }
   }
