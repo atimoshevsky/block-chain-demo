@@ -6,11 +6,11 @@
   </mat-form-field>
 
   <mat-form-field appearance="legacy">
-    <input matInput placeholder="Nonce" value="{{nonce}}" readonly>
+    <input matInput placeholder="Nonce" [(ngModel)]="nonce" (keyup)="onDataChanged()">
   </mat-form-field>
 
   <mat-form-field appearance="legacy">
-    <textarea matInput placeholder="Data" [(ngModel)]="userData" (keyup)="userDataChange()" rows="10"></textarea>
+    <textarea matInput placeholder="Data" [(ngModel)]="userData" (keyup)="onDataChanged()" rows="10"></textarea>
   </mat-form-field>
 
   <mat-form-field appearance="outline">
