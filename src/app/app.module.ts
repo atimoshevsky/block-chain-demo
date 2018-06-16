@@ -46,6 +46,8 @@ import {
 
 import { BlockComponent } from './block/block.component';
 import { HashComponent } from './hash/hash.component';
+import { BlockchainComponent } from './blockchain/blockchain.component';
+import { SimpleBlockComponent } from './shared/simple-block/simple-block.component';
 
 
 
@@ -53,7 +55,9 @@ import { HashComponent } from './hash/hash.component';
   declarations: [
     AppComponent,
     BlockComponent,
-    HashComponent
+    HashComponent,
+    BlockchainComponent,
+    SimpleBlockComponent
   ],
   imports: [
     CommonModule,
@@ -99,7 +103,7 @@ import { HashComponent } from './hash/hash.component';
     RouterModule.forRoot([
       { path: 'block', component: BlockComponent},
       { path: 'hash', component: HashComponent},
-      { path: '', redirectTo: 'welcome', pathMatch: 'full'},
+      { path: '', component: HashComponent},
       { path: '**', redirectTo: 'welcome', pathMatch: 'full'}
     ])
   ],
