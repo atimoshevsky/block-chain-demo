@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Block } from '../../core/block';
+import { Mode } from '../../core/mode';
 
 @Component({
   selector: 'app-block',
@@ -8,6 +9,8 @@ import { Block } from '../../core/block';
 })
 export class BlockComponent implements OnInit {
   block: Block;
+  blockMode =  Mode.Block;
+  index = 0;
 
   constructor() {
   }
@@ -16,5 +19,9 @@ export class BlockComponent implements OnInit {
     // for empty user data, the 129039 is a right nonce
       this.block = new Block(0, '11/06/2018', '', 129039);
       this.block.CalculateHash();
+  }
+
+  onTestChange() {
+    this.block.Data = 'Alex Hello';
   }
 }

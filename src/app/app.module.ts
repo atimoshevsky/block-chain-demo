@@ -103,6 +103,7 @@ import { SimpleBlockComponent } from './shared/simple-block/simple-block.compone
     RouterModule.forRoot([
       { path: 'block', component: BlockComponent},
       { path: 'hash', component: HashComponent},
+      { path: 'blockchain', component: BlockchainComponent},
       { path: '', component: HashComponent},
       { path: '**', redirectTo: 'welcome', pathMatch: 'full'}
     ])

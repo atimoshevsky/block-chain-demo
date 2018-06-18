@@ -1,5 +1,6 @@
-import { Component, Input,  OnInit } from '@angular/core';
+import { Component, Input,  OnInit, OnChanges } from '@angular/core';
 import { Block } from '../../../core/block';
+import { Mode } from '../../../core/mode';
 
 @Component({
   selector: 'app-simple-block',
@@ -7,35 +8,43 @@ import { Block } from '../../../core/block';
   styleUrls: ['./simple-block.component.css']
 })
 
-export class SimpleBlockComponent implements OnInit {
+export class SimpleBlockComponent implements OnChanges, OnInit {
   @Input() block: Block;
-  sentiment = 'sentiment_very_satisfied';
+  @Input() mode: Mode;
+
+  isPreviouseHash: boolean;
+  sentiment: string;
   mined = true;
 
-  constructor() { }
+  constructor() {
+   }
 
   ngOnInit() {
+    this.isPreviouseHash = (this.mode === Mode.BlockChain);
+    this.updateMined();
+  }
+
+  ngOnChanges() {
+    console.log('I do not know how to use it yet!!!!');
   }
 
   onMine(): void {
     this.mineBlock();
-    this.mined = true;
+    this.updateMined();
   }
 
   mineBlock() {
     this.block.ProofOfWork();
-    this.sentiment = 'sentiment_very_satisfied';
+    this.updateMined();
   }
 
   onDataChanged() {
     this.block.CalculateHash();
+    this.updateMined();
+  }
 
-    if (this.block.IsMeetDifficulty()) {
-      this.sentiment = 'sentiment_very_satisfied';
-      this.mined = true;
-    } else {
-      this.sentiment = 'sentiment_very_dissatisfied';
-      this.mined = false;
-    }
+  updateMined() {
+    this.sentiment = this.block.IsMeetDifficulty() ? 'sentiment_very_satisfied' : 'sentiment_very_dissatisfied';
+    this.mined =  this.block.IsMeetDifficulty();
   }
 }
