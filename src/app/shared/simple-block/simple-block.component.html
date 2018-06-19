@@ -1,25 +1,26 @@
 <div class="block-container">
   <h3>Block</h3>
   <br/>
+
   <mat-form-field appearance="legacy">
     <input matInput placeholder="Block,#" readonly value="{{block.index}}">
   </mat-form-field>
 
   <mat-form-field appearance="legacy">
-    <input matInput placeholder="Nonce" [(ngModel)]="block.Nonce" (keyup)="onDataChanged()">
+    <input matInput placeholder="Nonce" [(ngModel)]="block.Nonce">
   </mat-form-field>
 
   <mat-form-field appearance="legacy">
-    <textarea matInput placeholder="Data" [(ngModel)]="block.Data" (keyup)="onDataChanged()" rows="10"></textarea>
+    <textarea matInput placeholder="Data" [(ngModel)]="block.Data" rows="10"></textarea>
   </mat-form-field>
 
   <mat-form-field appearance="legacy" *ngIf="isPreviouseHash">
-    <input matInput placeholder="Previous Hash" [value]="block.PreviouseHash" readonly>
+    <input matInput placeholder="Previous Hash" [value]="block.PreviouseHash" readonly >
   </mat-form-field>
   
   <mat-form-field appearance="legacy">
-    <input matInput placeholder="Hash" [value]="block.Hash" readonly [style.color]="mined ? 'black': 'red'">
-    <mat-icon [style.color]="mined ? 'black': 'red'" matSuffix>{{sentiment}}</mat-icon>
+    <input matInput placeholder="Hash" [(ngModel)]="block.Hash" readonly [style.color]="mined ? 'green': 'red'">
+    <mat-icon [style.color]="mined ? 'green': 'red'" matSuffix>{{sentiment}}</mat-icon>
   </mat-form-field>
 </div>
 

@@ -1,1 +1,3 @@
-<app-simple-block [block]="block" [mode]="blockMode"></app-simple-block>
+<app-simple-block [block]="block" [mode]="blockMode" [userData]="block.Data" [nonce]="block.Nonce" [hash]="block.Hash"></app-simple-block>
+
+<button mat-raised-button color="primary" (click)="onTestChange()">test me</button>

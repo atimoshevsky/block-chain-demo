@@ -20,8 +20,4 @@ export class BlockComponent implements OnInit {
       this.block = new Block(0, '11/06/2018', '', 129039);
       this.block.CalculateHash();
   }
-
-  onTestChange() {
-    this.block.Data = 'Alex Hello';
-  }
 }

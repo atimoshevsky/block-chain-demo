@@ -1,4 +1,5 @@
 
-<div *ngFor="let block of blockChain" style="float: left; margin-left: 5%;">
-    <app-simple-block [block]="block" [mode]="mode"></app-simple-block>
+<div *ngFor="let block of blockChain" style="float: left; margin-left: 4%;">
+    <app-simple-block [block]="block" [mode]="mode" [userData]="block.Data" [nonce]="block.Nonce" [hash]="block.Hash"></app-simple-block>
 </div>
+

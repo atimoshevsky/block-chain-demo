@@ -12,6 +12,12 @@ export class SimpleBlockComponent implements OnChanges, OnInit {
   @Input() block: Block;
   @Input() mode: Mode;
 
+  // Hack! somehow it gives possibility to catch ngOnChange when I change UI and when Container change Block item.
+  // MAGIC!!!
+  @Input() userData: string;
+  @Input() hash: string;
+  @Input() nonce: number;
+
   isPreviouseHash: boolean;
   sentiment: string;
   mined = true;
@@ -25,7 +31,8 @@ export class SimpleBlockComponent implements OnChanges, OnInit {
   }
 
   ngOnChanges() {
-    console.log('I do not know how to use it yet!!!!');
+    this.block.CalculateHash();
+    this.updateMined();
   }
 
   onMine(): void {
@@ -38,9 +45,8 @@ export class SimpleBlockComponent implements OnChanges, OnInit {
     this.updateMined();
   }
 
-  onDataChanged() {
-    this.block.CalculateHash();
-    this.updateMined();
+  onPreviouseHashChange(event: any) {
+    console.log( 'previouse hhash change');
   }
 
   updateMined() {
