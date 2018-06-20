@@ -1,4 +1,4 @@
-import { Component, Input,  OnInit, OnChanges } from '@angular/core';
+import { Component, Input,  EventEmitter, OnInit, OnChanges, Output } from '@angular/core';
 import { Block } from '../../../core/block';
 import { Mode } from '../../../core/mode';
 
@@ -11,12 +11,7 @@ import { Mode } from '../../../core/mode';
 export class SimpleBlockComponent implements OnChanges, OnInit {
   @Input() block: Block;
   @Input() mode: Mode;
-
-  // Hack! somehow it gives possibility to catch ngOnChange when I change UI and when Container change Block item.
-  // MAGIC!!!
-  @Input() userData: string;
-  @Input() hash: string;
-  @Input() nonce: number;
+  @Output() blockChanged =  new EventEmitter<Block>();
 
   isPreviouseHash: boolean;
   sentiment: string;
@@ -27,29 +22,37 @@ export class SimpleBlockComponent implements OnChanges, OnInit {
 
   ngOnInit() {
     this.isPreviouseHash = (this.mode === Mode.BlockChain);
-    this.updateMined();
+    this.refresh();
   }
 
   ngOnChanges() {
+    console.log('ngOnChanges');
     this.block.CalculateHash();
-    this.updateMined();
+    this.refresh();
   }
 
-  onMine(): void {
-    this.mineBlock();
-    this.updateMined();
+  onNonceKey(event: any) {
+    if (this.blockChanged) {
+      this.blockChanged.emit(this.block);
+    }
   }
 
-  mineBlock() {
+  onDataKey(event: any) {
+    if (this.blockChanged) {
+      this.blockChanged.emit(this.block);
+    }
+  }
+
+  onMineClicked(): void {
     this.block.ProofOfWork();
-    this.updateMined();
+    this.refresh();
   }
 
   onPreviouseHashChange(event: any) {
     console.log( 'previouse hhash change');
   }
 
-  updateMined() {
+  refresh() {
     this.sentiment = this.block.IsMeetDifficulty() ? 'sentiment_very_satisfied' : 'sentiment_very_dissatisfied';
     this.mined =  this.block.IsMeetDifficulty();
   }

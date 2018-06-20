@@ -7,11 +7,11 @@
   </mat-form-field>
 
   <mat-form-field appearance="legacy">
-    <input matInput placeholder="Nonce" [(ngModel)]="block.Nonce">
+    <input matInput placeholder="Nonce" [(ngModel)]="block.Nonce" (keyup)="onNonceKey($event)">
   </mat-form-field>
 
   <mat-form-field appearance="legacy">
-    <textarea matInput placeholder="Data" [(ngModel)]="block.Data" rows="10"></textarea>
+    <textarea matInput placeholder="Data" [(ngModel)]="block.Data" rows="10" (keyup)="onDataKey($event)"></textarea>
   </mat-form-field>
 
   <mat-form-field appearance="legacy" *ngIf="isPreviouseHash">
@@ -25,6 +25,6 @@
 </div>
 
 <div class="block-container-button">
-  <button mat-raised-button color="primary" (click)="onMine()">Mine
+  <button mat-raised-button color="primary" (click)="onMineClicked()">Mine
   </button>
 </div>
