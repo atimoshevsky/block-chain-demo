@@ -48,6 +48,7 @@ import { BlockComponent } from './block/block.component';
 import { HashComponent } from './hash/hash.component';
 import { BlockchainComponent } from './blockchain/blockchain.component';
 import { SimpleBlockComponent } from './shared/simple-block/simple-block.component';
+import { DistributedBlockchainComponent } from './distributed-blockchain/distributed-blockchain.component';
 
 
 
@@ -57,7 +58,8 @@ import { SimpleBlockComponent } from './shared/simple-block/simple-block.compone
     BlockComponent,
     HashComponent,
     BlockchainComponent,
-    SimpleBlockComponent
+    SimpleBlockComponent,
+    DistributedBlockchainComponent
   ],
   imports: [
     CommonModule,
@@ -104,6 +106,7 @@ import { SimpleBlockComponent } from './shared/simple-block/simple-block.compone
       { path: 'block', component: BlockComponent},
       { path: 'hash', component: HashComponent},
       { path: 'blockchain', component: BlockchainComponent},
+      { path: 'distributed', component: DistributedBlockchainComponent},
       { path: '', component: HashComponent},
       { path: '**', redirectTo: 'welcome', pathMatch: 'full'}
     ])
