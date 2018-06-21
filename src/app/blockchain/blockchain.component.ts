@@ -38,4 +38,7 @@ export class BlockchainComponent implements OnInit {
     }
   }
 
+  trackByBlocks(index: number, block: Block): number {
+      return block.index;
+  }
 }
