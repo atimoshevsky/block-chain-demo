@@ -26,7 +26,6 @@ export class SimpleBlockComponent implements OnChanges, OnInit {
   }
 
   ngOnChanges() {
-    console.log('ngOnChanges');
     this.block.CalculateHash();
     this.refresh();
   }
@@ -44,12 +43,16 @@ export class SimpleBlockComponent implements OnChanges, OnInit {
   }
 
   onMineClicked(): void {
-    this.block.ProofOfWork();
-    this.refresh();
-  }
+    if (!this.block.IsMeetDifficulty()) {
+      this.block.ProofOfWork();
+      this.refresh();
 
-  onPreviouseHashChange(event: any) {
-    console.log( 'previouse hhash change');
+      if (this.mode === Mode.BlockChain) {
+        if (this.blockChanged) {
+          this.blockChanged.emit(this.block);
+        }
+      }
+    }
   }
 
   refresh() {

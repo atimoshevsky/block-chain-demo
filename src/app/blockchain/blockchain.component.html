@@ -1,5 +1,5 @@
 
 <div *ngFor="let block of blockChain" style="float: left; margin-left: 4%;">
-    <app-simple-block [block]="block" [mode]="mode"></app-simple-block>
+    <app-simple-block [block]="block" [mode]="mode" (blockChanged)="onBlockChanged($event)"></app-simple-block>
 </div>
 
