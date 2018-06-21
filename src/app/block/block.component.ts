@@ -17,7 +17,7 @@ export class BlockComponent implements OnInit {
 
   ngOnInit() {
     // for empty user data, the 129039 is a right nonce
-      this.block = new Block(0, this.timeStamp, '', 129039);
+      this.block = new Block(1, this.timeStamp, '', 30688);
       this.block.CalculateHash();
   }
 

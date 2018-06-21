@@ -1,26 +1,28 @@
-<div class="block-container">
-  <h3>Block</h3>
-  <br/>
-
-  <mat-form-field appearance="legacy">
-    <input matInput placeholder="Block,#" readonly value="{{block.index}}">
+<div class="border-primary block-container" >
+  <mat-form-field appearance="outline">
+    <mat-label>Block,#</mat-label>
+    <input matInput readonly value="{{block.index}}">
   </mat-form-field>
 
-  <mat-form-field appearance="legacy">
+  <mat-form-field appearance="outline">
+    <mat-label>Nonce</mat-label>
     <input matInput placeholder="Nonce" [(ngModel)]="block.Nonce" (keyup)="onNonceKey($event)">
   </mat-form-field>
 
-  <mat-form-field appearance="legacy">
+  <mat-form-field appearance="outline">
+    <mat-label>Data</mat-label>
     <textarea matInput placeholder="Data" [(ngModel)]="block.Data" rows="10" (keyup)="onDataKey($event)"></textarea>
   </mat-form-field>
 
-  <mat-form-field appearance="legacy" *ngIf="isPreviouseHash">
-    <input matInput placeholder="Previous Hash" [value]="block.PreviouseHash" readonly >
+  <mat-form-field appearance="outline" *ngIf="isPreviouseHash">
+    <mat-label>Previous Hash</mat-label>
+    <input matInput placeholder="Previous Hash" [value]="block.PreviouseHash" readonly>
   </mat-form-field>
-  
-  <mat-form-field appearance="legacy">
-    <input matInput placeholder="Hash" [(ngModel)]="block.Hash" readonly [style.color]="mined ? 'green': 'red'">
-    <mat-icon [style.color]="mined ? 'green': 'red'" matSuffix>{{sentiment}}</mat-icon>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Hash</mat-label>
+    <input matInput placeholder="Hash" [(ngModel)]="block.Hash" readonly [style.color]="mined ? 'blue': 'red'">
+    <mat-icon [style.color]="mined ? 'blue': 'red'" matSuffix>{{sentiment}}</mat-icon>
   </mat-form-field>
 </div>
 

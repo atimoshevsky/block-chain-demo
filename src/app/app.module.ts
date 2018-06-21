@@ -49,6 +49,7 @@ import { HashComponent } from './hash/hash.component';
 import { BlockchainComponent } from './blockchain/blockchain.component';
 import { SimpleBlockComponent } from './shared/simple-block/simple-block.component';
 import { DistributedBlockchainComponent } from './distributed-blockchain/distributed-blockchain.component';
+import { TokenComponent } from './token/token.component';
 
 
 
@@ -59,7 +60,8 @@ import { DistributedBlockchainComponent } from './distributed-blockchain/distrib
     HashComponent,
     BlockchainComponent,
     SimpleBlockComponent,
-    DistributedBlockchainComponent
+    DistributedBlockchainComponent,
+    TokenComponent
   ],
   imports: [
     CommonModule,
