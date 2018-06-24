@@ -50,6 +50,7 @@ import { BlockchainComponent } from './blockchain/blockchain.component';
 import { SimpleBlockComponent } from './shared/simple-block/simple-block.component';
 import { DistributedBlockchainComponent } from './distributed-blockchain/distributed-blockchain.component';
 import { TokenComponent } from './token/token.component';
+import { SimpleBlockDataTableComponent } from './shared/simple-block-data-table/simple-block-data-table.component';
 
 
 
@@ -61,7 +62,8 @@ import { TokenComponent } from './token/token.component';
     BlockchainComponent,
     SimpleBlockComponent,
     DistributedBlockchainComponent,
-    TokenComponent
+    TokenComponent,
+    SimpleBlockDataTableComponent
   ],
   imports: [
     CommonModule,

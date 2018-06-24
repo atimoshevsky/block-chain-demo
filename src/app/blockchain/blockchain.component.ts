@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Block } from '../../core/block';
 import { Mode } from '../../core/mode';
+import { BlockTransaction } from '../../core/block-transaction';
 
 @Component({
   selector: 'app-blockchain',
@@ -8,6 +9,7 @@ import { Mode } from '../../core/mode';
   styleUrls: ['./blockchain.component.css']
 })
 export class BlockchainComponent implements OnInit {
+  @Input() blockTransaction: BlockTransaction[] = null;
   blockChain: Array<Block>;
   initalNonce: Array<number> = [28343, 152168, 101917, 67021, 17682];
   mode = Mode.BlockChain;

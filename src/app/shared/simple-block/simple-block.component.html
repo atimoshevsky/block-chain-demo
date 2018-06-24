@@ -9,10 +9,14 @@
     <input matInput placeholder="Nonce" [(ngModel)]="block.Nonce" (keyup)="onNonceKey($event)">
   </mat-form-field>
 
-  <mat-form-field appearance="outline">
+  <mat-form-field appearance="outline" *ngIf="blockChainDataSource === null">
     <mat-label>Data</mat-label>
     <textarea matInput placeholder="Data" [(ngModel)]="block.Data" rows="10" (keyup)="onDataKey($event)"></textarea>
   </mat-form-field>
+
+  <div *ngIf="blockChainDataSource !== null">
+    <app-simple-block-data-table [dataSource]='blockChainDataSource'></app-simple-block-data-table>
+  </div>
 
   <mat-form-field appearance="outline" *ngIf="isPreviouseHash">
     <mat-label>Previous Hash</mat-label>

@@ -1,6 +1,7 @@
 import { Component, Input,  EventEmitter, OnInit, OnChanges, Output } from '@angular/core';
 import { Block } from '../../../core/block';
 import { Mode } from '../../../core/mode';
+import { BlockTransaction } from '../../../core/block-transaction';
 
 @Component({
   selector: 'app-simple-block',
@@ -11,6 +12,7 @@ import { Mode } from '../../../core/mode';
 export class SimpleBlockComponent implements OnChanges, OnInit {
   @Input() block: Block;
   @Input() mode: Mode;
+  @Input() blockChainDataSource: BlockTransaction[];
   @Output() blockChanged =  new EventEmitter<Block>();
 
   isPreviouseHash: boolean;
