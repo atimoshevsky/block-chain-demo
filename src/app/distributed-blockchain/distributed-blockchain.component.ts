@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./distributed-blockchain.component.css']
 })
 export class DistributedBlockchainComponent implements OnInit {
-
+  peerTitleA = 'Peer A';
+  peerTitleB = 'Peer B';
+  peerTitleC = 'Peer C';
   constructor() { }
 
   ngOnInit() {

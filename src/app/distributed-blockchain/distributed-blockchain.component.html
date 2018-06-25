@@ -1,12 +1,9 @@
-<h2>
-        Distributed Blockchain</h2>
+<h2> Distributed Blockchain</h2>
 <br/>
-<h3>
-        Peer A</h3>
-<app-blockchain [blockTransaction]="null"></app-blockchain>
-<div style="clear:both; height: 10%;"></div>
-<h3>Peer B</h3>
-<app-blockchain [blockTransaction]="null"></app-blockchain>
+
+<app-blockchain [blockTransaction]="null" [blockchainTitle]="peerTitleA"></app-blockchain>
 <div style="clear:both;"></div>
-<h3>Peer C</h3>
-<app-blockchain [blockTransaction]="null"></app-blockchain>
+<app-blockchain [blockTransaction]="null" [blockchainTitle]="peerTitleB"></app-blockchain>
+<div style="clear:both;"></div>
+<app-blockchain [blockTransaction]="null" [blockchainTitle]="peerTitleC"></app-blockchain>
+<div style="clear:both;"></div>

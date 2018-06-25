@@ -10,6 +10,7 @@ import { BlockTransaction } from '../../core/block-transaction';
 })
 export class BlockchainComponent implements OnInit {
   @Input() blockTransaction: BlockTransaction[] = null;
+  @Input() blockchainTitle = 'Blockchain';
   blockChain: Array<Block>;
   initalNonce: Array<number> = [28343, 152168, 101917, 67021, 17682];
   mode = Mode.BlockChain;

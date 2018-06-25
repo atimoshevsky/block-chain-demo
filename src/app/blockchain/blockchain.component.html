@@ -1,6 +1,8 @@
 
-<h3>Blockchain</h3>
-<br/>
+<h3>
+{{blockchainTitle}}
+</h3>
+<br>
 <div *ngFor="let block of blockChain; trackBy: trackByBlocks" class="blockchain-container">
     <app-simple-block [block]="block" [mode]="mode" (blockChanged)="onBlockChanged($event)" [blockChainDataSource]="blockTransaction"></app-simple-block>
 </div>
