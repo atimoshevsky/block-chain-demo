@@ -1,33 +1,35 @@
 <div [ngClass]="{'border-primary': true, 'blockchain-container': true, 'blockchain-container-error': !mined}" name="simpleblock">
-  <mat-form-field appearance="outline">
-    <mat-label>Block,#</mat-label>
-    <input matInput readonly value="{{block.index}}">
-  </mat-form-field>
+  <mat-icon [style.color]="mined ? '': 'red'" matSuffix>{{sentiment}}</mat-icon>
+  <div class="form-group">
+    <label>Block,#</label>
+    <input type="text" class="form-control" value="{{block.index}}" readonly>
+  </div>
 
-  <mat-form-field appearance="outline">
-    <mat-label>Nonce</mat-label>
-    <input matInput placeholder="Nonce" [(ngModel)]="block.Nonce" (keyup)="onNonceKey($event)">
-  </mat-form-field>
+  <div class="form-group">
+    <label>Nonce</label>
+    <input type="text" class="form-control" placeholder="Nonce" [(ngModel)]="block.Nonce" (keyup)="onNonceKey($event)">
+  </div>
 
-  <mat-form-field appearance="outline" *ngIf="blockChainDataSource === null">
-    <mat-label>Data</mat-label>
-    <textarea matInput placeholder="Data" [(ngModel)]="block.Data" rows="10" (keyup)="onDataKey($event)"></textarea>
-  </mat-form-field>
+  <div class="form-group">
+    <label>Data</label>
+    <textarea class="form-control" placeholder="Data" [(ngModel)]="block.Data" rows="10" (keyup)="onDataKey($event)"></textarea>
+  </div>
 
   <div *ngIf="blockChainDataSource !== null">
     <app-simple-block-data-table [dataSource]='blockChainDataSource'></app-simple-block-data-table>
   </div>
 
-  <mat-form-field appearance="outline" *ngIf="isPreviouseHash">
-    <mat-label>Previous Hash</mat-label>
-    <input matInput placeholder="Previous Hash" [value]="block.PreviouseHash" readonly>
-  </mat-form-field>
+  <div class="form-group" *ngIf="isPreviouseHash">
+    <label>Previous Hash</label>
+    <input type="text" class="form-control" placeholder="Previous Hash" [value]="block.PreviouseHash" readonly>
+  </div>
 
-  <mat-form-field appearance="outline">
-    <mat-label>Hash</mat-label>
-    <input matInput placeholder="Hash" [(ngModel)]="block.Hash" readonly [style.color]="mined ? '': 'red'">
-    <mat-icon [style.color]="mined ? '': 'red'" matSuffix>{{sentiment}}</mat-icon>
-  </mat-form-field>
+  <div class="form-group">
+    <label>Hash</label>
+    <input type="text" class="form-control" placeholder="Hash" [(ngModel)]="block.Hash" readonly [style.color]="mined ? '': 'red'">
+    
+  </div>
+
 </div>
 
 <div class="block-container-button">
