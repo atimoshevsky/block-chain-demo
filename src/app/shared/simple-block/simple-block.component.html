@@ -1,4 +1,4 @@
-<div class="border-primary block-container" >
+<div [ngClass]="{'border-primary': true, 'blockchain-container': true, 'blockchain-container-error': !mined}" name="simpleblock">
   <mat-form-field appearance="outline">
     <mat-label>Block,#</mat-label>
     <input matInput readonly value="{{block.index}}">
@@ -25,8 +25,8 @@
 
   <mat-form-field appearance="outline">
     <mat-label>Hash</mat-label>
-    <input matInput placeholder="Hash" [(ngModel)]="block.Hash" readonly [style.color]="mined ? 'blue': 'red'">
-    <mat-icon [style.color]="mined ? 'blue': 'red'" matSuffix>{{sentiment}}</mat-icon>
+    <input matInput placeholder="Hash" [(ngModel)]="block.Hash" readonly [style.color]="mined ? '': 'red'">
+    <mat-icon [style.color]="mined ? '': 'red'" matSuffix>{{sentiment}}</mat-icon>
   </mat-form-field>
 </div>
 

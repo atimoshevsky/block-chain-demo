@@ -1,17 +1,21 @@
-.block-container {
+.blockchain-container {
     display: flex;
     flex-direction: column;
-    width: 100%;
-  }
+    background-color: #ddf0d7;
+ }
 
-  .block-container-button {
+  .blockchain-container-button {
     align-content: center;
   }
   
-  .block-container > * {
+  .blockchain-container > * {
     width: 100%;
   }
 
-  .block-container input{
+  .blockchain-container input{
     width: 100%;
+  }
+
+  .blockchain-container-error {
+    background-color: #f5d6db;
   }
