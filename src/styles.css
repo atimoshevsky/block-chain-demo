@@ -44,7 +44,10 @@ h2, h3 {
     border: 1px solid #dae1d8;
     width: 45%;
 }
-
+.block-container-content-error
+{
+    background-color: #f5d6db;
+}
 .blockchain-container-content-error
 {
     background-color: #f5d6db;

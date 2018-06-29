@@ -1,7 +1,7 @@
 <div class="blockchain-container-wrapper">
   <h3>Block</h3>
   <br>
-  <div [ngClass]="{'block-container-content':true}">
-    <app-simple-block [block]="block" [mode]="blockMode" (blockChanged)="onBlockChanged($event)" [blockChainDataSource]="null"></app-simple-block>
+  <div [ngClass]="{'block-container-content':true, 'block-container-content-error': !mined}">
+    <app-simple-block [block]="block" [mode]="blockMode" (minedChanged)="onMinedChanged($event)" (blockChanged)="onBlockChanged($event)" [blockChainDataSource]="null"></app-simple-block>
   </div>
 </div>

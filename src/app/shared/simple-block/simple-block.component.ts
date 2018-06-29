@@ -13,7 +13,9 @@ export class SimpleBlockComponent implements OnChanges, OnInit {
   @Input() block: Block;
   @Input() mode: Mode;
   @Input() blockChainDataSource: BlockTransaction[];
-  @Output() blockChanged =  new EventEmitter<Block>();
+  @Output() blockChanged = new EventEmitter<Block>();
+  @Output() minedChanged = new EventEmitter<boolean>();
+
 
   isPreviouseHash: boolean;
   sentiment: string;
@@ -60,5 +62,8 @@ export class SimpleBlockComponent implements OnChanges, OnInit {
   refresh() {
     this.sentiment = this.block.IsMeetDifficulty() ? 'sentiment_very_satisfied' : 'sentiment_very_dissatisfied';
     this.mined =  this.block.IsMeetDifficulty();
+    if (this.minedChanged) {
+      this.minedChanged.emit(this.mined);
+    }
   }
 }
