@@ -12,7 +12,7 @@ import { BlockTransaction } from '../../../core/block-transaction';
 export class SimpleBlockComponent implements OnChanges, OnInit {
   @Input() block: Block;
   @Input() mode: Mode;
-  @Input() blockChainDataSource: BlockTransaction[];
+  @Input() blockChainDataSource: Array<BlockTransaction>;
   @Output() blockChanged = new EventEmitter<Block>();
   @Output() minedChanged = new EventEmitter<boolean>();
 
@@ -22,11 +22,13 @@ export class SimpleBlockComponent implements OnChanges, OnInit {
   mined = true;
 
   constructor() {
-   }
+  }
 
   ngOnInit() {
-    this.isPreviouseHash = (this.mode === Mode.BlockChain);
+    this.isPreviouseHash = (this.mode === Mode.BlockChain || this.mode === Mode.Tokens);
     this.refresh();
+
+    console.log(this.blockChainDataSource);
   }
 
   ngOnChanges() {

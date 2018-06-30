@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Mode } from '../../core/mode';
 
 @Component({
   selector: 'app-distributed-blockchain',
@@ -9,6 +10,7 @@ export class DistributedBlockchainComponent implements OnInit {
   peerTitleA = 'Peer A';
   peerTitleB = 'Peer B';
   peerTitleC = 'Peer C';
+  mode: Mode =  Mode.Distributed;
   constructor() { }
 
   ngOnInit() {
