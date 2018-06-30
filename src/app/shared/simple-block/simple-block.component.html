@@ -16,7 +16,8 @@
   </div>
 
   <div *ngIf="blockChainDataSource !== null">
-    <app-simple-block-data-table [dataSource]='blockChainDataSource'></app-simple-block-data-table>
+    <label>Data</label>
+    <app-simple-block-data-table [blockTransactions]='blockChainDataSource'></app-simple-block-data-table>
   </div>
 
   <div class="form-group" *ngIf="isPreviouseHash">
@@ -27,9 +28,7 @@
   <div class="form-group">
     <label>Hash</label>
     <input type="text" class="form-control" placeholder="Hash" [(ngModel)]="block.Hash" readonly [style.color]="mined ? '': 'red'">
-    
-  </div>
-
+   </div>
 </div>
 
 <div class="block-container-button">

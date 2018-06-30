@@ -7,11 +7,14 @@ import { BlockTransaction } from '../../../core/block-transaction';
   styleUrls: ['./simple-block-data-table.component.css']
 })
 export class SimpleBlockDataTableComponent implements OnInit {
-  @Input() dataSource: BlockTransaction;
-  displayedColumns = ['id', 'amount', 'from', 'to'];
+  @Input() blockTransactions: BlockTransaction[];
   constructor() { }
 
   ngOnInit() {
   }
+
+  trackByTransaction(index: number, transaction: BlockTransaction): number {
+    return transaction.id;
+}
 
 }
