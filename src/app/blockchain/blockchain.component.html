@@ -3,7 +3,7 @@
         {{blockchainTitle}}
     </h3>
     <br>
-    <div *ngFor="let block of blockChain; trackBy: trackByBlocks" [ngClass]="{'blockchain-container-content':true}">
-        <app-simple-block [block]="block" [mode]="mode" (blockChanged)="onBlockChanged($event)" [blockChainDataSource]="blockTransaction"></app-simple-block>
+    <div *ngFor="let block of blockChain; trackBy: trackByBlocks" [ngClass]="{'blockchain-container-content':true, 'blockchain-container-content-error': !mined}">
+        <app-simple-block [block]="block" [mode]="mode" (minedChanged)="onMinedChanged($event)" (blockChanged)="onBlockChanged($event)" [blockChainDataSource]="blockTransaction"></app-simple-block>
     </div>
 </div>

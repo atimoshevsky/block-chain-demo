@@ -111,6 +111,7 @@ import { SimpleBlockDataTableComponent } from './shared/simple-block-data-table/
       { path: 'hash', component: HashComponent},
       { path: 'blockchain', component: BlockchainComponent},
       { path: 'distributed', component: DistributedBlockchainComponent},
+      { path: 'tokens', component: TokenComponent},
       { path: '', component: HashComponent},
       { path: '**', redirectTo: 'welcome', pathMatch: 'full'}
     ])

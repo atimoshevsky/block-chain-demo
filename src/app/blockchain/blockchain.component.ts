@@ -16,6 +16,7 @@ export class BlockchainComponent implements OnInit {
   mode = Mode.BlockChain;
   timeStamp = '2018/06/18';
   blockChainLength = 5;
+  mined = true;
 
   constructor() {
     this.blockChain = new Array<Block>();
@@ -30,6 +31,10 @@ export class BlockchainComponent implements OnInit {
 
   ngOnInit() {
 
+  }
+
+  onMinedChanged(mined: boolean) {
+    // do nothing
   }
 
   onBlockChanged(block: Block) {
