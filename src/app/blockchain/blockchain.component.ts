@@ -13,6 +13,9 @@ export class BlockchainComponent implements OnInit {
   @Input() blockchainTitle = 'Blockchain';
   blockChain: Array<Block>;
   initalNonce: Array<number> = [28343, 152168, 101917, 67021, 17682];
+  initalNames: Array<string> = ['Vika', 'Adam', 'Gerry', 'Lukasz', 'Misha', 'Varvara',
+  'Wojciech', 'Tim', 'Allan', 'James', 'Marcin', 'Tomasz', 'Mariusz', 'Dimitri', 'Kasper', 'Julia',
+  'Sveta'];
   timeStamp = '2018/06/18';
   blockChainLength = 5;
   transactionDataSource: Array<Array<BlockTransaction>> = null;
@@ -59,7 +62,14 @@ export class BlockchainComponent implements OnInit {
     const transactionCount = 5;
     const transactions = new Array<BlockTransaction>();
     for (let i = 0; i < transactionCount; i++) {
-      const transaction = new BlockTransaction(i, this.randomInt(100, 200), 'Alex', 'Vika');
+      let transaction = null;
+      if (i % 1 === 1) {
+        transaction = new BlockTransaction(i, this.randomInt(100, 100), 'Alex', 'Vika');
+      } else {
+        transaction = new BlockTransaction(i, this.randomInt(10, 95),
+        this.initalNames[this.randomInt(0, 16)],
+        this.initalNames[this.randomInt(0, 16)]);
+      }
       transactions.push(transaction);
     }
     return transactions;

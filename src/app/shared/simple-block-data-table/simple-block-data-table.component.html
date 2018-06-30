@@ -9,7 +9,7 @@
   </thead>
   <tbody>
     <tr *ngFor="let transaction of blockTransactions; trackBy: trackByTransaction">
-      <th scope="row">{{transaction.id}}</th>
+      <th scope="row">{{transaction.id +1}}</th>
       <td>{{transaction.amount}}</td>
       <td>{{transaction.from}}</td>
       <td>{{transaction.to}}</td>
