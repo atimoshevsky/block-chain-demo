@@ -19,7 +19,6 @@ export class BlockchainComponent implements OnInit {
   timeStamp = '2018/06/18';
   blockChainLength = 5;
   transactionDataSource: Array<Array<BlockTransaction>> = null;
-  mined = true;
 
   constructor() {
   }
@@ -39,10 +38,6 @@ export class BlockchainComponent implements OnInit {
         this.transactionDataSource.push(null);
       }
     }
-  }
-
-  onMinedChanged(mined: boolean) {
-    // do nothing
   }
 
   onBlockChanged(block: Block) {

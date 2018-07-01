@@ -11,7 +11,6 @@ export class BlockComponent implements OnInit {
   block: Block;
   blockMode =  Mode.Block;
   timeStamp = '11/06/2018';
-  mined = true;
   constructor() {
   }
 
@@ -23,9 +22,5 @@ export class BlockComponent implements OnInit {
 
   onBlockChanged(block: Block) {
     this.block  = new Block(block.index, this.timeStamp, block.Data, block.Nonce, block.PreviouseHash);
-  }
-
-  onMinedChanged(mined: boolean) {
-    this.mined = mined;
   }
 }
