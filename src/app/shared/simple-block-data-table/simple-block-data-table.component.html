@@ -10,7 +10,11 @@
   <tbody>
     <tr *ngFor="let transaction of blockTransactions; trackBy: trackByTransaction">
       <th scope="row">{{transaction.id +1}}</th>
-      <td>{{transaction.amount}}</td>
+      <td>
+        <mat-form-field class="outline">
+          <input matInput placeholder="amount" value="{{transaction.amount}}">
+        </mat-form-field>
+      </td>
       <td>{{transaction.from}}</td>
       <td>{{transaction.to}}</td>
     </tr>

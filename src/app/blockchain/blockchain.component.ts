@@ -9,13 +9,13 @@ import { BlockTransaction } from '../../core/block-transaction';
   styleUrls: ['./blockchain.component.css']
 })
 export class BlockchainComponent implements OnInit {
-  @Input() mode: Mode =  Mode.BlockChain;
+  @Input() mode: Mode = Mode.BlockChain;
   @Input() blockchainTitle = 'Blockchain';
   blockChain: Array<Block>;
   initalNonce: Array<number> = [28343, 152168, 101917, 67021, 17682];
   initalNames: Array<string> = ['Vika', 'Adam', 'Gerry', 'Lukasz', 'Misha', 'Varvara',
-  'Wojciech', 'Tim', 'Allan', 'James', 'Marcin', 'Tomasz', 'Mariusz', 'Dimitri', 'Kasper', 'Julia',
-  'Sveta'];
+    'Wojciech', 'Tim', 'Allan', 'James', 'Marcin', 'Tomasz', 'Mariusz', 'Dimitri', 'Kasper', 'Julia',
+    'Sveta'];
   timeStamp = '2018/06/18';
   blockChainLength = 5;
   transactionDataSource: Array<Array<BlockTransaction>> = null;
@@ -28,17 +28,17 @@ export class BlockchainComponent implements OnInit {
     this.blockChain = new Array<Block>();
     this.transactionDataSource = new Array<Array<BlockTransaction>>();
     let previuseHash = '000000000000000000000000000000000000000000000000000000000000';
-     for (let i = 0; i < this.blockChainLength; i++) {
-       const block = new Block((i + 1), this.timeStamp, '', this.initalNonce[i], previuseHash);
-       block.CalculateHash();
-       previuseHash = block.Hash;
-       this.blockChain.push(block);
-       if (this.mode === Mode.Tokens) {
+    for (let i = 0; i < this.blockChainLength; i++) {
+      const block = new Block((i + 1), this.timeStamp, '', this.initalNonce[i], previuseHash);
+      block.CalculateHash();
+      previuseHash = block.Hash;
+      this.blockChain.push(block);
+      if (this.mode === Mode.Tokens) {
         this.transactionDataSource.push(this.buildTransaction());
-       } else {
+      } else {
         this.transactionDataSource.push(null);
-       }
-     }
+      }
+    }
   }
 
   onMinedChanged(mined: boolean) {
@@ -55,7 +55,7 @@ export class BlockchainComponent implements OnInit {
   }
 
   trackByBlocks(index: number, block: Block): number {
-      return block.index;
+    return block.index;
   }
 
   buildTransaction(): Array<BlockTransaction> {
@@ -63,13 +63,9 @@ export class BlockchainComponent implements OnInit {
     const transactions = new Array<BlockTransaction>();
     for (let i = 0; i < transactionCount; i++) {
       let transaction = null;
-      if (i % 1 === 1) {
-        transaction = new BlockTransaction(i, this.randomInt(100, 100), 'Alex', 'Vika');
-      } else {
-        transaction = new BlockTransaction(i, this.randomInt(10, 95),
-        this.initalNames[this.randomInt(0, 16)],
-        this.initalNames[this.randomInt(0, 16)]);
-      }
+      transaction = new BlockTransaction(i, this.randomInt(10, 95),
+                                          this.initalNames[this.randomInt(0, 16)],
+                                          this.initalNames[this.randomInt(0, 16)]);
       transactions.push(transaction);
     }
     return transactions;
@@ -78,5 +74,5 @@ export class BlockchainComponent implements OnInit {
 
   randomInt(min, max): number {
     return Math.floor(Math.random() * (max - min + 1)) + min;
- }
+  }
 }
