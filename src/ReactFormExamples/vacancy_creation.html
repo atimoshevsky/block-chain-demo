@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Takpraca</title>
+<link href="css/style.css" rel="stylesheet"></head>
+
+<body>
+  <div class="wrapper">
+    <header>
+      <div class="container">
+        <div class="row align-items-center no-gutters">
+          <div class="col-lg-3">
+            <div class="c-logo">
+              <a href="/" class="c-logo__link" title="takpraca.pl">
+                <img class="c-logo__img" src="assets/takpraca-logo-small.svg" alt="main logo">
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-9">
+            <nav class="main-nav">
+              <div class="menu">
+                <ul class="c-nav" role="menu">
+                  <li class="c-nav__item">
+                    <a class="c-nav__link" href="/search_initial.html">НАЙТИ РЕЗЮМЕ</a>
+                  </li>
+                  <li class="c-nav__item active">
+                    <a class="c-nav__link" href="#">РАЗМЕСТИТЬ ВАКАНСИЮ</a>
+                  </li>
+                  <li class="c-nav__item">
+                    <a class="c-nav__link" href="#">Блог</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="notification">
+                <a class="notification-bell" href="#">
+                  <i class="notification-bell__icon icon-notification-big">
+                    <!-- the number should be <= 99  -->
+                    <span class="notification-bell__text">5</span>
+                  </i>
+                </a>
+              </div>
+              <div class="login">
+                <ul class="c-nav">
+                  <li class=" c-nav__item">
+                    <div class="c-user-name">
+                      <span class="c-user-name__title bold">ABB Sp. z o.o.</span>
+                      <small class="c-user-name__person">Bartosz Zawałók</small>
+                    </div>
+                  </li>
+                  <li class="c-nav__item">
+                    <div class="c-btn c-btn--middle">
+                      <a class="c-btn__link" title="Вход для соискателей" href="#">Я - соискатель</a>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="main main--bg_light-gray py-5">
+      <section>
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="vacancy_creation">
+                <h1 class="vacancy_creation__header">Добавление новой вакансии</h1>
+                <form action="#" class="vacancy_creation__form" name="">
+                  <div class="c-input width-md">
+                    <span class="c-input__title">Название вакансии</span>
+                    <input type="text" class="c-input__input" required="required" name="vacancy_title">
+                    <small>Например: “Менеджер по продажам”</small>
+                  </div>
+                  <div class="c-input-group">
+                    <h5 class="c-input-group__header">Категория</h5>
+                    <div class="categories">
+                      <div class="c-checkbox">
+                        <label class="c-checkbox__label">
+                          <input class="c-checkbox__input" type="checkbox" name="">
+                          <span class="c-checkbox__control"></span>
+                          <span class="c-checkbox__text">IT, компьютеры, интернет</span>
+                        </label>
+                      </div>
+                      <div class="c-checkbox">
+                        <label class="c-checkbox__label">
+                          <input class="c-checkbox__input" type="checkbox" name="">
+                          <span class="c-checkbox__control"></span>
+                          <span class="c-checkbox__text">Администрация, менеджмент</span>
+                        </label>
+                      </div>
+                      <div class="c-checkbox">
+                        <label class="c-checkbox__label">
+                          <input class="c-checkbox__input" type="checkbox" name="">
+                          <span class="c-checkbox__control"></span>
+                          <span class="c-checkbox__text">Бухгалтерия, аудит</span>
+                        </label>
+                      </div>
+                      <div class="c-checkbox">
+                        <label class="c-checkbox__label">
+                          <input class="c-checkbox__input" type="checkbox" name="">
+                          <span class="c-checkbox__control"></span>
+                          <span class="c-checkbox__text">Дизайн, творчество</span>
+                        </label>
+                      </div>
+                      <div class="c-checkbox">
+                        <label class="c-checkbox__label">
+                          <input class="c-checkbox__input" type="checkbox" name="">
+                          <span class="c-checkbox__control"></span>
+                          <span class="c-checkbox__text">Красота, здоровье, спорт</span>
+                        </label>
+                      </div>
+                      <div class="c-checkbox">
+                        <label class="c-checkbox__label">
+                          <input class="c-checkbox__input" type="checkbox" name="">
+                          <span class="c-checkbox__control"></span>
+                          <span class="c-checkbox__text">Культура, музыка, шоу-бизнес</span>
+                        </label>
+                      </div>
+                      <div class="c-checkbox">
+                        <label class="c-checkbox__label">
+                          <input class="c-checkbox__input" type="checkbox" name="">
+                          <span class="c-checkbox__control"></span>
+                          <span class="c-checkbox__text">Логистика, склад</span>
+                        </label>
+                      </div>
+                      <div class="c-checkbox">
+                        <label class="c-checkbox__label">
+                          <input class="c-checkbox__input" type="checkbox" name="">
+                          <span class="c-checkbox__control"></span>
+                          <span class="c-checkbox__text">Маркетинг, реклама, PR</span>
+                        </label>
+                      </div>
+                      <div class="c-checkbox">
+                        <label class="c-checkbox__label">
+                          <input class="c-checkbox__input" type="checkbox" name="">
+                          <span class="c-checkbox__control"></span>
+                          <span class="c-checkbox__text">Медицина, фармацевтика</span>
+                        </label>
+                      </div>
+                      <div class="c-checkbox">
+                        <label class="c-checkbox__label">
+                          <input class="c-checkbox__input" type="checkbox" name="">
+                          <span class="c-checkbox__control"></span>
+                          <span class="c-checkbox__text">Морские специальности</span>
+                        </label>
+                      </div>
+                      <div class="c-checkbox">
+                        <label class="c-checkbox__label">
+                          <input class="c-checkbox__input" type="checkbox" name="">
+                          <span class="c-checkbox__control"></span>
+                          <span class="c-checkbox__text">Недвижимость</span>
+                        </label>
+                      </div>
+                      <div class="c-checkbox">
+                        <label class="c-checkbox__label">
+                          <input class="c-checkbox__input" type="checkbox" name="">
+                          <span class="c-checkbox__control"></span>
+                          <span class="c-checkbox__text">Образование, наука</span>
+                        </label>
+                      </div>
+                      <div class="c-checkbox">
+                        <label class="c-checkbox__label">
+                          <input class="c-checkbox__input" type="checkbox" name="">
+                          <span class="c-checkbox__control"></span>
+                          <span class="c-checkbox__text">Отельно-ресторанный бизнес, туризм</span>
+                        </label>
+                      </div>
+                      <div class="c-checkbox">
+                        <label class="c-checkbox__label">
+                          <input class="c-checkbox__input" type="checkbox" name="">
+                          <span class="c-checkbox__control"></span>
+                          <span class="c-checkbox__text">Охрана, безопасность</span>
+                        </label>
+                      </div>
+                      <div class="c-checkbox">
+                        <label class="c-checkbox__label">
+                          <input class="c-checkbox__input" type="checkbox" name="">
+                          <span class="c-checkbox__control"></span>
+                          <span class="c-checkbox__text">Продажи, закупки</span>
+                        </label>
+                      </div>
+                      <div class="c-checkbox">
+                        <label class="c-checkbox__label">
+                          <input class="c-checkbox__input" type="checkbox" name="">
+                          <span class="c-checkbox__control"></span>
+                          <span class="c-checkbox__text">Рабочие специальности, производство</span>
+                        </label>
+                      </div>
+                      <div class="c-checkbox">
+                        <label class="c-checkbox__label">
+                          <input class="c-checkbox__input" type="checkbox" name="">
+                          <span class="c-checkbox__control"></span>
+                          <span class="c-checkbox__text">Розничная торговля</span>
+                        </label>
+                      </div>
+                      <div class="c-checkbox">
+                        <label class="c-checkbox__label">
+                          <input class="c-checkbox__input" type="checkbox" name="">
+                          <span class="c-checkbox__control"></span>
+                          <span class="c-checkbox__text">Секретариат, делопроизводство</span>
+                        </label>
+                      </div>
+                      <div class="c-checkbox">
+                        <label class="c-checkbox__label">
+                          <input class="c-checkbox__input" type="checkbox" name="">
+                          <span class="c-checkbox__control"></span>
+                          <span class="c-checkbox__text">Сельское хозяйство, агробизнес</span>
+                        </label>
+                      </div>
+                      <div class="c-checkbox">
+                        <label class="c-checkbox__label">
+                          <input class="c-checkbox__input" type="checkbox" name="">
+                          <span class="c-checkbox__control"></span>
+                          <span class="c-checkbox__text">СМИ, издательство, полиграфия</span>
+                        </label>
+                      </div>
+                      <div class="c-checkbox">
+                        <label class="c-checkbox__label">
+                          <input class="c-checkbox__input" type="checkbox" name="">
+                          <span class="c-checkbox__control"></span>
+                          <span class="c-checkbox__text">Страхование</span>
+                        </label>
+                      </div>
+                      <div class="c-checkbox">
+                        <label class="c-checkbox__label">
+                          <input class="c-checkbox__input" type="checkbox" name="">
+                          <span class="c-checkbox__control"></span>
+                          <span class="c-checkbox__text">Строительство, архитектура</span>
+                        </label>
+                      </div>
+                      <div class="c-checkbox">
+                        <label class="c-checkbox__label">
+                          <input class="c-checkbox__input" type="checkbox" name="">
+                          <span class="c-checkbox__control"></span>
+                          <span class="c-checkbox__text">Сфера обслуживания, услуги</span>
+                        </label>
+                      </div>
+                      <div class="c-checkbox">
+                        <label class="c-checkbox__label">
+                          <input class="c-checkbox__input" type="checkbox" name="">
+                          <span class="c-checkbox__control"></span>
+                          <span class="c-checkbox__text">Телекоммуникации, связь</span>
+                        </label>
+                      </div>
+                      <div class="c-checkbox">
+                        <label class="c-checkbox__label">
+                          <input class="c-checkbox__input" type="checkbox" name="">
+                          <span class="c-checkbox__control"></span>
+                          <span class="c-checkbox__text">Топ-менеджмент</span>
+                        </label>
+                      </div>
+                      <div class="c-checkbox">
+                        <label class="c-checkbox__label">
+                          <input class="c-checkbox__input" type="checkbox" name="">
+                          <span class="c-checkbox__control"></span>
+                          <span class="c-checkbox__text">Транспорт, автобизнес</span>
+                        </label>
+                      </div>
+                      <div class="c-checkbox">
+                        <labактивноel class="c-checkbox__label">
+                          <input class="c-checkbox__input" type="checkbox" name="">
+                          <span class="c-checkbox__control"></span>
+                          <span class="c-checkbox__text">Управление персоналом, HR</span>
+                        </label>
+                      </div>
+                      <div class="c-checkbox">
+                        <label class="c-checkbox__label">
+                          <input class="c-checkbox__input" type="checkbox" name="">
+                          <span class="c-checkbox__control"></span>
+                          <span class="c-checkbox__text">Финансы, банк</span>
+                        </label>
+                      </div>
+                      <div class="c-checkbox">
+                        <label class="c-checkbox__label">
+                          <input class="c-checkbox__input" type="checkbox" name="">
+                          <span class="c-checkbox__control"></span>
+                          <span class="c-checkbox__text">Юриспруденция</span>
+                        </label>
+                      </div>
+                      <div class="c-checkbox">
+                        <label class="c-checkbox__label">
+                          <input class="c-checkbox__input" type="checkbox" name="">
+                          <span class="c-checkbox__control"></span>
+                          <span class="c-checkbox__text">Другие сферы деятельности</span>
+                        </label>
+                      </div>
+                    </div>
+                    <small>Не более трёх</small>
+                  </div>
+                  <div class="c-input-group">
+                    <!-- В этом поле нужно коротко описать вакансию (от 200 символов). Изначально в поле уже есть 3 пункта (см. слайд): Требования, Обязанности, Условия работы. Так же в поле присутствуют несколько базовых элементов редактирования (жирный/обычный шрифт, добавить цифры или значки пунктов(точки), и размер шрифта (большой и маленький). Обязательно для заполнения -->
+                    <h5 class="c-input-group__header">Описание вакансии</h5>
+                    <div class="c-input-group__item">
+                      <!-- TEXT EDITOR SHOULD BE PLACED HERE -->
+                    </div>
+                    <small>От 200 символов</small>
+                  </div>
+                  <div class="c-input-group">
+                    <h5 class="c-input-group__header">Дополнительно</h5>
+                    <div class="c-checkbox">
+                      <label class="c-checkbox__label">
+                        <input class="c-checkbox__input" type="checkbox" name="">
+                        <span class="c-checkbox__control"></span>
+
+                        <span class="c-checkbox__text">
+                          <i class="c-checkbox__icon icon-home-small"></i>Предоставляется жилье</span>
+                      </label>
+                    </div>
+                    <div class="c-checkbox">
+                      <label class="c-checkbox__label">
+                        <input class="c-checkbox__input" type="checkbox" name="">
+                        <span class="c-checkbox__control"></span>
+                        <span class="c-checkbox__text">
+                          <i class="c-checkbox__icon icon-eat-small"></i>Предоставляется питание</span>
+                      </label>
+                    </div>
+                    <div class="c-checkbox">
+                      <label class="c-checkbox__label">
+                        <input class="c-checkbox__input" type="checkbox" name="">
+                        <span class="c-checkbox__control"></span>
+                        <span class="c-checkbox__text">
+                          <i class="c-checkbox__icon icon-invite-small"></i>Делаем приглашение</span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="c-input-group">
+                    <h5 class="c-input-group__header">Контакты</h5>
+
+                    <div class="c-input-group__item">
+                      <span class="c-input-group__title">Контактное лицо</span>
+                      <input class="c-input-group__input width-md" type="text" required="required" name="name">
+                      <small>Ваш имя: Васильев Павел
+                        <span class="underlined">выбрать</span>
+                      </small>
+                    </div>
+
+                    <!-- the block telephone item -->
+                    <div class="c-input-group__inline-items">
+                      <span>1.</span>
+                      <div>
+                        <div class="c-input-group__item">
+                          <span class="c-input-group__title">Телефон</span>
+                          <input class="c-input-group__input width-md" type="tel" maxlength="14" autocomplete="on" required="required" name="phone">
+                          <small>Ваш номер: +48 442 446 447
+                            <span class="underlined">выбрать</span>
+                          </small>
+                        </div>
+                        <div class="c-input-group__item">
+                          <div class="c-checkbox">
+                            <label class="c-checkbox__label mr-5">
+                              <input class="c-checkbox__input" type="checkbox" name="viber_input">
+                              <span class="c-checkbox__control"></span>
+                              <span class="c-checkbox__text">Viber</span>
+                            </label>
+                            <label class="c-checkbox__label">
+                              <input class="c-checkbox__input" type="checkbox" name="whatsapp_input">
+                              <span class="c-checkbox__control"></span>
+                              <span class="c-checkbox__text">Whatsapp</span>
+                            </label>
+                          </div>
+
+                        </div>
+                      </div>
+                      <button type="button" class="btn_remove"></button>
+                    </div>
+                     <!-- end of block telephone item -->
+
+                    <!-- this button for adding block telephone item -->
+                    <button class="btn_add" type="button">+Добавить</button>
+                  </div>
+                  <div class="c-input-group">
+                    <h5 class="c-input-group__header">Регион</h5>
+                    <div class="c-input-group__item">
+                      <span class="c-input-group__title">Воеводство</span>
+                      <i class="icon-location-small c-input-group__location-icon"></i>
+                      <div class="c-select">
+                        <select class="c-select__select bold width-md" data-type="location" required="" name="region">
+                          <option value="">--Выбери воеводство--</option>
+                          <option value="1">воеводство1</option>
+                          <option value="2">воеводство2</option>
+                          <option value="3">воеводство3</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="c-input-group__item">
+                      <span class="c-input-group__title">Город</span>
+                      <input class="c-input-group__input width-md" type="text" required="required" name="city">
+                    </div>
+                  </div>
+                  <div class="c-input-group">
+                    <h5 class="c-input-group__header">Вид занятости</h5>
+                    <div class="c-checkbox">
+                      <label class="c-checkbox__label">
+                        <input class="c-checkbox__input" type="checkbox" name="">
+                        <span class="c-checkbox__control"></span>
+                        <span class="c-checkbox__text">Выбрать все</span>
+                      </label>
+                    </div>
+                    <div class="c-checkbox">
+                      <label class="c-checkbox__label">
+                        <input class="c-checkbox__input" type="checkbox" name="">
+                        <span class="c-checkbox__control"></span>
+                        <span class="c-checkbox__text">Сезонная работа</span>
+                      </label>
+                    </div>
+                    <div class="c-checkbox">
+                      <label class="c-checkbox__label">
+                        <input class="c-checkbox__input" type="checkbox" name="">
+                        <span class="c-checkbox__control"></span>
+                        <span class="c-checkbox__text">Постоянная работа</span>
+                      </label>
+                    </div>
+                    <div class="c-checkbox">
+                      <label class="c-checkbox__label">
+                        <input class="c-checkbox__input" type="checkbox" name="">
+                        <span class="c-checkbox__control"></span>
+                        <span class="c-checkbox__text">Дополнительная работа</span>
+                      </label>
+                    </div>
+                    <div class="c-checkbox">
+                      <label class="c-checkbox__label">
+                        <input class="c-checkbox__input" type="checkbox" name="">
+                        <span class="c-checkbox__control"></span>
+                        <span class="c-checkbox__text">Работа для студентов</span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="c-input-group">
+                    <h5 class="c-input-group__header">Знание языков</h5>
+                    <div class="c-input-group__item c-input-group__inline-items">
+                      <span>1.</span>
+                      <div class="c-input-group__item">
+                        <span class="c-input-group__title">Язык</span>
+                        <div class="c-select">
+                          <select class="c-select__select width-sm" name="language">
+                            <option value="1">Русский</option>
+                            <option value="2">Polish</option>
+                            <option value="3">English</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="c-input-group__item">
+                        <span class="c-input-group__title">Уровень знания</span>
+                        <div class="c-select">
+                          <select class="c-select__select width-sm" name="lang_level">
+                            <option value="1">Начальный</option>
+                            <option value="2">Средний</option>
+                            <option value="3">Высокий</option>
+                          </select>
+                        </div>
+                      </div>
+                      <button type="button" class="btn_remove"></button>
+                    </div>
+                    <button class="btn_add" type="button">+Добавить</button>
+                  </div>
+                  <div class="c-input-group">
+                    <h5 class="c-input-group__header">Зарплата</h5>
+                    <div class="c-input-group__item">
+                      <div class="c-input">
+                        <input class="c-input__input c-input__input--inline bold width-xsm" type="text" data-validate="number" name="salary">
+                        <span class="bold">zł/час</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="c-input-group">
+                    <h5 class="c-input-group__header">Тип контракта</h5>
+                    <div class="c-checkbox">
+                      <label class="c-checkbox__label">
+                        <input class="c-checkbox__input" type="checkbox" name="">
+                        <span class="c-checkbox__control"></span>
+                        <span class="c-checkbox__text">Umowa o pracę</span>
+                      </label>
+                    </div>
+                    <div class="c-checkbox">
+                      <label class="c-checkbox__label">
+                        <input class="c-checkbox__input" type="checkbox" name="">
+                        <span class="c-checkbox__control"></span>
+                        <span class="c-checkbox__text">Umowa zlecenia</span>
+                      </label>
+                    </div>
+                    <div class="c-checkbox">
+                      <label class="c-checkbox__label">
+                        <input class="c-checkbox__input" type="checkbox" name="">
+                        <span class="c-checkbox__control"></span>
+                        <span class="c-checkbox__text">Umowa o dzieło</span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="c-input">
+                    <button class="c-input__input" type="button">СОХРАНИТЬ ЧЕРНОВИК</button>
+                  </div>
+                  <div class="c-input">
+                    <button class="c-input__input" type="button">ПРЕДВАРИТЕЛЬНЫЙ ПРОСМОТР</button>
+                  </div>
+
+                  <div class="c-btn my-4">
+                    <button class="c-btn__button" type="submit">ОПУБЛИКОВАТЬ ВАКАНСИЮ</button>
+                    <button class="c-btn__button" type="reset">ОТМЕНИТЬ</button>
+                  </div>
+
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="container my-3">
+        <div class="row">
+          <div class="col-2">
+            <div class="c-link-group">
+              <h3 class="c-link-group__header">О нас</h3>
+              <ul class="c-link-group__list">
+                <li class="c-link-group__item">
+                  <a href="#" class="c-link-group__link">
+                    О Readytojob.pl
+                  </a>
+                </li>
+                <li class="c-link-group__item">
+                  <a href="#" class="c-link-group__link">
+                    Условия использования
+                  </a>
+                </li>
+                <li class="c-link-group__item">
+                  <a href="#" class="c-link-group__link">
+                    Карта сайта
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="c-link-group">
+              <h3 class="c-link-group__header">Соискателю</h3>
+              <ul class="c-link-group__list">
+                <li class="c-link-group__item">
+                  <a href="#" class="c-link-group__link">
+                    Найти работу
+                  </a>
+                </li>
+                <li class="c-link-group__item">
+                  <a href="#" class="c-link-group__link">
+                    Разместить резюме
+                  </a>
+                </li>
+                <li class="c-link-group__item">
+                  <a href="#" class="c-link-group__link">
+                    Рассылка вакансий
+                  </a>
+                </li>
+                <li class="c-link-group__item">
+                  <a href="#" class="c-link-group__link">
+                    Новости и статьи
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="c-link-group">
+              <h3 class="c-link-group__header">Работодателю</h3>
+              <ul class="c-link-group__list">
+                <li class="c-link-group__item">
+                  <a href="#" class="c-link-group__link">
+                    Добавить вакансию
+                  </a>
+                </li>
+                <li class="c-link-group__item">
+                  <a href="#" class="c-link-group__link">
+                    Поиск резюме
+                  </a>
+                </li>
+                <li class="c-link-group__item">
+                  <a href="#" class="c-link-group__link">
+                    Рассылка резюме
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-3">
+          </div>
+          <div class="col-3">
+            <div class="footer-right">
+              <div class="lang-switcher footer-right__item">
+                <div class="c-select">
+                  <select class="c-select__select bold" name="lang_select">
+                    <option value="ru" selected>Русский</option>
+                    <option value="pl">Polish</option>
+                    <option value="en">English</option>
+                  </select>
+                </div>
+              </div>
+              <div class="social-icons footer-right__item">
+                <div class="c-social-icons">
+                  <a href="#" class="c-social-icons__item">
+                    <span class="icon-facebook-logo-small"></span>
+                  </a>
+                  <a href="#" class="c-social-icons__item">
+                    <span class="icon-linkedin-logo-small"></span>
+                  </a>
+                  <a href="#" class="c-social-icons__item">
+                    <span class="icon-telegram-logo-small"></span>
+                  </a>
+                  <a href="#" class="c-social-icons__item">
+                    <span class="icon-vk-logo-small">
+                      <span class="path1"></span>
+                      <span class="path2"></span>
+                    </span>
+                  </a>
+                </div>
+              </div>
+              <div class="write-to-us footer-right__item">
+                <p class="write-to-us__text">Присылайте свои замечания и пожелания по работе портала</p>
+                <div class="c-arrow-link c-arrow-link--red  write-to-us__arrow-link ">
+                  <a href="#" class="c-arrow-link__link bold">Написать нам
+                    <span class="arr">&#8594;</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-4">
+            <div class="c-logo">
+              <a href="#" class="c-logo__link" title="takpraca.pl">
+                <img class="c-logo__img" src="assets/takpraca-logo-small.svg" alt="main logo">
+              </a>
+            </div>
+          </div>
+          <div class="col-8">
+            <small class="copyrights">
+              Faded Media Sp.z.o.o. ©2017 Все права защищены и охраняюься действующим законодательством Польши. Использование материалов
+              с данного сайта возможно только с письменного разрешения компании Faded Media Sp.z.o.o. Администрация сайта
+              не несет ответственности за содержание размещенных объявлений.
+            </small>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+<script type="text/javascript" src="js/bundle.js"></script></body>
+
+</html>

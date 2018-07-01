@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Takpraca</title>
+<link href="css/style.css" rel="stylesheet"></head>
+
+<body>
+  <div class="wrapper">
+    <header>
+      <div class="container">
+        <div class="row align-items-center no-gutters">
+          <div class="col-lg-3">
+            <div class="c-logo">
+              <a href="/" class="c-logo__link" title="takpraca.pl">
+                <img class="c-logo__img" src="assets/takpraca-logo-small.svg" alt="main logo">
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-9">
+            <nav class="main-nav">
+              <div class="menu">
+                <ul class="c-nav" role="menu">
+                  <li class="c-nav__item">
+                    <a class="c-nav__link" href="/search_initial.html">Найти работу</a>
+                  </li>
+                  <li class="c-nav__item">
+                    <a class="c-nav__link" href="#">Разместить резюме</a>
+                  </li>
+                  <li class="c-nav__item">
+                    <a class="c-nav__link" href="#">Блог</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="login">
+                <ul class="c-nav">
+                  <li class=" c-nav__item">
+                    <!-- Button trigger modal -->
+                    <button type="button" data-toggle="modal" data-target="#login-modal">
+                      Вход/Регистрация
+                    </button>
+                  </li>
+                  <li class="c-nav__item">
+                    <div class="c-btn c-btn--middle">
+                      <a class="c-btn__link" title="Вход для соискателей" href="#">Я - соискатель</a>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="search-bar search-bar--bg_img">
+        <div class="container ">
+          <div class="row">
+            <div class="col-12">
+              <h1 class="search-bar__header">Найди работника из Украины!</h1>
+            </div>
+          </div>
+          <form action="/" method="GET" class="header-search mb-5" name="header_search">
+            <div class="row no-gutters">
+              <div class="col-5">
+                <input class="header-search__item" type="text" tabindex="1" autocomplete="off" placeholder="Должность, фирма, отрасль" name="position">
+              </div>
+              <div class="col-4">
+                <!-- the span below for pseudo :before with content background locationIcon -->
+                <i class="icon-location-small header-search__left-icon"></i>
+                <input class="header-search__item" type="text" tabindex="2" autocomplete="off" placeholder="Воеводство или город" name="location">
+              </div>
+              <div class="col-3">
+                <div class="c-btn header-search__item header-search__item--style_red p-0">
+                  <button id="btn-search" class="c-btn__button uppercase" tabindex="3" type="submit">Найти резюме</button>
+                </div>
+              </div>
+            </div>
+          </form>
+          <div class="row">
+            <div class="col-12">
+              <div class="search-by">
+                <span>Поиск по:</span>
+                <div class="dropdown">
+                  <a id="link-categories" class="search-by__title dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">Категориям</a>
+                  <div class="dropdown-menu" aria-labelledby="lfe-link-categories">
+                    <div class="p-3 d-flex">
+                      <ul class="search-by__list p-0">
+                        <li class="dropdown-item">
+                          <a class="search-by__link" href="#">IT, компьютеры, интернет</a>
+                        </li>
+                        <li class="dropdown-item">
+                          <a class="search-by__link" href="#">Администрация, менеджмент</a>
+                        </li>
+                        <li class="dropdown-item">
+                          <a class="search-by__link" href="#">Бухгалтерия, аудит</a>
+                        </li>
+                        <li class="dropdown-item">
+                          <a class="search-by__link" href="#">Дизайн, творчество</a>
+                        </li>
+                        <li class="dropdown-item">
+                          <a class="search-by__link" href="#">Красота, здоровье, спорт</a>
+                        </li>
+                        <li class="dropdown-item">
+                          <a class="search-by__link" href="#">Культура, музыка, шоу-бизнес</a>
+                        </li>
+                        <li class="dropdown-item">
+                          <a class="search-by__link" href="#">Логистика, склад</a>
+                        </li>
+                        <li class="dropdown-item">
+                          <a class="search-by__link" href="#">Маркетинг, реклама, PR</a>
+                        </li>
+                        <li class="dropdown-item">
+                          <a class="search-by__link" href="#">Медицина, фармацевтика</a>
+                        </li>
+                        <li class="dropdown-item">
+                          <a class="search-by__link" href="#">Морские специальности</a>
+                        </li>
+                      </ul>
+                      <ul class="search-by__list p-0">
+                        <li class="dropdown-item">
+                          <a class="search-by__link" href="#">Недвижимость</a>
+                        </li>
+                        <li class="dropdown-item">
+                          <a class="search-by__link" href="#">Образование, наука</a>
+                        </li>
+                        <li class="dropdown-item">
+                          <a class="search-by__link" href="#">Отельно-ресторанный бизнес, туризм</a>
+                        </li>
+                        <li class="dropdown-item">
+                          <a class="search-by__link" href="#">Охрана, безопасность</a>
+                        </li>
+                        <li class="dropdown-item">
+                          <a class="search-by__link" href="#">Продажи, закупки</a>
+                        </li>
+                        <li class="dropdown-item">
+                          <a class="search-by__link" href="#">Рабочие специальности, производство</a>
+                        </li>
+                        <li class="dropdown-item">
+                          <a class="search-by__link" href="#">Розничная торговля</a>
+                        </li>
+                        <li class="dropdown-item">
+                          <a class="search-by__link" href="#">Секретариат, делопроизводство</a>
+                        </li>
+                        <li class="dropdown-item">
+                          <a class="search-by__link" href="#">Сельское хозяйство, агробизнес</a>
+                        </li>
+                        <li class="dropdown-item">
+                          <a class="search-by__link" href="#">СМИ, издательство, полиграфия</a>
+                        </li>
+                      </ul>
+                      <ul class="search-by__list p-0">
+                        <li class="dropdown-item">
+                          <a class="search-by__link" href="#">Страхование</a>
+                        </li>
+                        <li class="dropdown-item">
+                          <a class="search-by__link" href="#">Строительство, архитектура</a>
+                        </li>
+                        <li class="dropdown-item">
+                          <a class="search-by__link" href="#">Сфера обслуживания, услуги</a>
+                        </li>
+                        <li class="dropdown-item">
+                          <a class="search-by__link" href="#">Телекоммуникации, связь</a>
+                        </li>
+                        <li class="dropdown-item">
+                          <a class="search-by__link" href="#">Топ-менеджмент</a>
+                        </li>
+                        <li class="dropdown-item">
+                          <a class="search-by__link" href="#">Транспорт, автобизнес</a>
+                        </li>
+                        <li class="dropdown-item">
+                          <a class="search-by__link" href="#">Управление персоналом, HR</a>
+                        </li>
+                        <li class="dropdown-item">
+                          <a class="search-by__link" href="#">Финансы, банк</a>
+                        </li>
+                        <li class="dropdown-item">
+                          <a class="search-by__link" href="#">Юриспруденция</a>
+                        </li>
+                        <li class="dropdown-item">
+                          <a class="search-by__link" href="#">Другие сферы деятельности</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="green-section">
+            <div class="row">
+              <div class="col-6">
+                <div class="green-section__leftSide p-0">
+                  <h1 class="green-section__header bold">Разместить вакансию</h1>
+                  <p class="green-section__text">Это поможет вам быстро найти и эффективно найти работника.</p>
+                  <div class="c-btn c-btn--large c-btn--color_white c-btn--border_white mb-4 ">
+                    <a class="c-btn__link uppercase" href="#">РАЗМЕСТИТЬ ВАКАНСИЮ</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="tools">
+        <div class="container">
+          <div class="row">
+            <div class="col-4">
+              <div class="c-tool">
+                <div class="c-tool__img">
+                  <img src="assets/base-of-knowledge-big.svg" alt="base of knowledge">
+                </div>
+                <h3 class="c-tool__title">База резюме</h3>
+                <p class="c-tool__text">Доступ к тысячам работников из Украины и других стран восточной Европы с их детальной информацией о их иммиграционном
+                  статусе
+                </p>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="c-tool">
+                <div class="c-tool__img">
+                  <img src="assets/recruitment-instruments-big.svg" alt="base of knowledge">
+                </div>
+                <h3 class="c-tool__title">Инструменты рекрутации</h3>
+                <p class="c-tool__text">Продвинутые инструменты рекрутации упростят процесс отбора кандидатов</p>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="c-tool">
+                <div class="c-tool__img">
+                  <img src="assets/vacancy-publication-big.svg" alt="base of knowledge">
+                </div>
+                <h3 class="c-tool__title">Публикация вакансий</h3>
+                <p class="c-tool__text">С помощью одного клика публикуй свои вакансии и мгновенно получай отклики от кандидатов
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="container my-3">
+        <div class="row">
+          <div class="col-2">
+            <div class="c-link-group">
+              <h3 class="c-link-group__header">О нас</h3>
+              <ul class="c-link-group__list">
+                <li class="c-link-group__item">
+                  <a href="#" class="c-link-group__link">
+                    О Readytojob.pl
+                  </a>
+                </li>
+                <li class="c-link-group__item">
+                  <a href="#" class="c-link-group__link">
+                    Условия использования
+                  </a>
+                </li>
+                <li class="c-link-group__item">
+                  <a href="#" class="c-link-group__link">
+                    Карта сайта
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="c-link-group">
+              <h3 class="c-link-group__header">Соискателю</h3>
+              <ul class="c-link-group__list">
+                <li class="c-link-group__item">
+                  <a href="#" class="c-link-group__link">
+                    Найти работу
+                  </a>
+                </li>
+                <li class="c-link-group__item">
+                  <a href="#" class="c-link-group__link">
+                    Разместить резюме
+                  </a>
+                </li>
+                <li class="c-link-group__item">
+                  <a href="#" class="c-link-group__link">
+                    Рассылка вакансий
+                  </a>
+                </li>
+                <li class="c-link-group__item">
+                  <a href="#" class="c-link-group__link">
+                    Новости и статьи
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="c-link-group">
+              <h3 class="c-link-group__header">Работодателю</h3>
+              <ul class="c-link-group__list">
+                <li class="c-link-group__item">
+                  <a href="#" class="c-link-group__link">
+                    Добавить вакансию
+                  </a>
+                </li>
+                <li class="c-link-group__item">
+                  <a href="#" class="c-link-group__link">
+                    Поиск резюме
+                  </a>
+                </li>
+                <li class="c-link-group__item">
+                  <a href="#" class="c-link-group__link">
+                    Рассылка резюме
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-3">
+          </div>
+          <div class="col-3">
+            <div class="footer-right">
+              <div class="lang-switcher footer-right__item">
+                <div class="c-select">
+                  <select class="c-select__select bold" name="lang_select">
+                    <option value="ru" selected>Русский</option>
+                    <option value="pl">Polish</option>
+                    <option value="en">English</option>
+                  </select>
+                </div>
+              </div>
+              <div class="social-icons footer-right__item">
+                <div class="c-social-icons">
+                  <a href="#" class="c-social-icons__item">
+                    <span class="icon-facebook-logo-small"></span>
+                  </a>
+                  <a href="#" class="c-social-icons__item">
+                    <span class="icon-linkedin-logo-small"></span>
+                  </a>
+                  <a href="#" class="c-social-icons__item">
+                    <span class="icon-telegram-logo-small"></span>
+                  </a>
+                  <a href="#" class="c-social-icons__item">
+                    <span class="icon-vk-logo-small">
+                      <span class="path1"></span>
+                      <span class="path2"></span>
+                    </span>
+                  </a>
+                </div>
+              </div>
+              <div class="write-to-us footer-right__item">
+                <p class="write-to-us__text">Присылайте свои замечания и пожелания по работе портала</p>
+                <div class="c-arrow-link c-arrow-link--red  write-to-us__arrow-link ">
+                  <a href="#" class="c-arrow-link__link bold">Написать нам
+                    <span class="arr">&#8594;</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-4">
+            <div class="c-logo">
+              <a href="#" class="c-logo__link" title="takpraca.pl">
+                <img class="c-logo__img" src="assets/takpraca-logo-small.svg" alt="main logo">
+              </a>
+            </div>
+          </div>
+          <div class="col-8">
+            <small class="copyrights">
+              Faded Media Sp.z.o.o. ©2017 Все права защищены и охраняюься действующим законодательством Польши. Использование материалов
+              с данного сайта возможно только с письменного разрешения компании Faded Media Sp.z.o.o. Администрация сайта
+              не несет ответственности за содержание размещенных объявлений.
+            </small>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+<script type="text/javascript" src="js/bundle.js"></script></body>
+
+</html>
