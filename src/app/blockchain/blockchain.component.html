@@ -4,6 +4,6 @@
     </h3>
     <br>
     <div *ngFor="let block of blockChain; trackBy: trackByBlocks" [ngClass]="{'blockchain-container-content':true}">
-        <app-simple-block [block]="block" [mode]="mode" (blockChanged)="onBlockChanged($event)" [blockChainDataSource]="transactionDataSource[block.index-1]"></app-simple-block>
+        <app-simple-block [block]="block" [mode]="mode" (blockChanged)="onBlockChanged($event)"></app-simple-block>
     </div>
 </div>

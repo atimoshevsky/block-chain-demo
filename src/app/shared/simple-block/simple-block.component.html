@@ -10,14 +10,14 @@
     <input type="text" class="form-control" placeholder="Nonce" [(ngModel)]="block.Nonce" (keyup)="onNonceKey($event)">
   </div>
 
-  <div class="form-group" *ngIf="blockChainDataSource === null">
+  <div class="form-group" *ngIf="mode !== 4">
     <label>Data</label>
     <textarea class="form-control" placeholder="Data" [(ngModel)]="block.Data" rows="10" (keyup)="onDataKey($event)"></textarea>
   </div>
 
-  <div *ngIf="blockChainDataSource !== null">
+  <div *ngIf="mode === 4">
     <label>Data</label>
-    <app-simple-block-data-table [blockTransactions]='blockChainDataSource'></app-simple-block-data-table>
+    <app-simple-block-data-table [blockTransactions]='block.Data'></app-simple-block-data-table>
   </div>
 
   <div class="form-group" *ngIf="isPreviouseHash">

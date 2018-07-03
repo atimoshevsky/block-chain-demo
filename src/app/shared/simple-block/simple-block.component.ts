@@ -12,7 +12,6 @@ import { BlockTransaction } from '../../../core/block-transaction';
 export class SimpleBlockComponent implements OnChanges, OnInit {
   @Input() block: Block;
   @Input() mode: Mode;
-  @Input() blockChainDataSource: Array<BlockTransaction>;
   @Output() blockChanged = new EventEmitter<Block>();
 
   isPreviouseHash: boolean;

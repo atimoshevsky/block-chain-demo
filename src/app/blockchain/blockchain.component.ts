@@ -18,25 +18,24 @@ export class BlockchainComponent implements OnInit {
     'Sveta'];
   timeStamp = '2018/06/18';
   blockChainLength = 5;
-  transactionDataSource: Array<Array<BlockTransaction>> = null;
 
   constructor() {
   }
 
   ngOnInit() {
     this.blockChain = new Array<Block>();
-    this.transactionDataSource = new Array<Array<BlockTransaction>>();
     let previuseHash = '000000000000000000000000000000000000000000000000000000000000';
     for (let i = 0; i < this.blockChainLength; i++) {
-      const block = new Block((i + 1), this.timeStamp, '', this.initalNonce[i], previuseHash);
+      let block = null;
+      if (this.mode === Mode.Tokens) {
+         block = new Block((i + 1), this.timeStamp, JSON.stringify(this.buildTransaction()), this.initalNonce[i], previuseHash);
+      } else {
+        block = new Block((i + 1), this.timeStamp, '', this.initalNonce[i], previuseHash);
+      }
+
       block.CalculateHash();
       previuseHash = block.Hash;
       this.blockChain.push(block);
-      if (this.mode === Mode.Tokens) {
-        this.transactionDataSource.push(this.buildTransaction());
-      } else {
-        this.transactionDataSource.push(null);
-      }
     }
   }
 

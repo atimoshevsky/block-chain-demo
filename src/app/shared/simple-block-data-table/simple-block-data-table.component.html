@@ -8,15 +8,16 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let transaction of blockTransactions; trackBy: trackByTransaction">
-      <th scope="row">{{transaction.id +1}}</th>
+    <tr *ngFor="let transaction of transactions; trackBy: trackByTransaction" style="height: 10px;">
+      <th scope="row" style="vertical-align:middle;">{{transaction.id +1}}</th>
       <td>
-        <mat-form-field class="outline">
-          <input matInput placeholder="amount" value="{{transaction.amount}}">
+        <mat-form-field appearance="outline">
+          <input matInput placeholder="amount" value="{{transaction.amount}}" type="number" >
+          <mat-hint>$, amount</mat-hint>
         </mat-form-field>
       </td>
-      <td>{{transaction.from}}</td>
-      <td>{{transaction.to}}</td>
+      <td style="vertical-align:middle;">{{transaction.from}}</td>
+      <td style="vertical-align:middle;">{{transaction.to}}</td>
     </tr>
   </tbody>
 </table>
