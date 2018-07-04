@@ -50,9 +50,9 @@ h2, h3 {
     background-color: #f5d6db;
 }
 
-.blockchain-container-content .block-container-button {
-    position: absolute;
-    bottom: 15px;
+.block-container-button {
+    position: relative;
+    bottom: 45px;
     left: 15px;
     z-index: 5;
 }

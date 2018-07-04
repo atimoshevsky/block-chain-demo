@@ -19,6 +19,11 @@ export class SimpleBlockDataTableComponent implements OnInit {
 
   trackByTransaction(transaction: BlockTransaction): number {
     return transaction.id;
-}
+  }
+
+  onDataKey(event: any) {
+    console.log(event);
+  }
+
 
 }

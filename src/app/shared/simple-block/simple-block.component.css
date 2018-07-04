@@ -23,3 +23,20 @@
   .blockchain-container-error {
     background-color: #f5d6db;
   }
+
+  .container-button-loader {
+    background: #f0f0f0 url('../../../assets/loading.gif') center center no-repeat;
+	  position: absolute;
+	  z-index:20;
+	  left:60px;
+	  top:3px;
+	  bottom:0;
+	  right:0;
+    opacity: 0.8;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+	  display: block;
+  }
+
+  

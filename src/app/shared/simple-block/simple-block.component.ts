@@ -1,4 +1,4 @@
-import { Component, Input,  EventEmitter, OnInit, OnChanges, Output } from '@angular/core';
+import { Component, Input, EventEmitter, OnInit, OnChanges, Output } from '@angular/core';
 import { Block } from '../../../core/block';
 import { Mode } from '../../../core/mode';
 import { BlockTransaction } from '../../../core/block-transaction';
@@ -17,6 +17,7 @@ export class SimpleBlockComponent implements OnChanges, OnInit {
   isPreviouseHash: boolean;
   sentiment: string;
   mined = true;
+  mining = false;
 
   constructor() {
   }
@@ -44,20 +45,23 @@ export class SimpleBlockComponent implements OnChanges, OnInit {
   }
 
   onMineClicked(): void {
-    if (!this.block.IsMeetDifficulty()) {
-      this.block.ProofOfWork();
-      this.refresh();
-
-      if (this.mode === Mode.BlockChain) {
-        if (this.blockChanged) {
-          this.blockChanged.emit(this.block);
+    this.mining = true;
+    setTimeout(() => {
+      if (!this.block.IsMeetDifficulty()) {
+        this.block.ProofOfWork();
+        this.refresh();
+        if (this.mode === Mode.BlockChain) {
+          if (this.blockChanged) {
+            this.blockChanged.emit(this.block);
+          }
         }
       }
-    }
+      this.mining = false;
+    }, 500);
   }
 
   refresh() {
     this.sentiment = this.block.IsMeetDifficulty() ? 'sentiment_very_satisfied' : 'sentiment_very_dissatisfied';
-    this.mined =  this.block.IsMeetDifficulty();
+    this.mined = this.block.IsMeetDifficulty();
   }
 }
