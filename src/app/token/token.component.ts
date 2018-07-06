@@ -10,12 +10,6 @@ import { Mode } from '../../core/mode';
 })
 export class TokenComponent implements OnInit {
   mode: Mode =  Mode.Tokens;
-
-  blockTransaction: BlockTransaction[] = [
-    new BlockTransaction(1, 100, 'Alex', 'Vika'),
-    new BlockTransaction(2, 30, 'Vika', 'Mama'),
-    new BlockTransaction(3, 30, 'Vika', 'Papa')
-];
   constructor() { }
 
   ngOnInit() {

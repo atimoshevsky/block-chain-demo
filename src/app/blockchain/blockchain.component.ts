@@ -12,8 +12,8 @@ export class BlockchainComponent implements OnInit {
   @Input() mode: Mode = Mode.BlockChain;
   @Input() blockchainTitle = 'Blockchain';
   blockChain: Array<Block>;
-  initalNonce: Array<number> = [28343, 152168, 101917, 67021, 17682];
-  tokenInitalNonce: Array<number> = [78050, 22310, 39892, 5275, 88690];
+  initalNonce: Array<number> = [85817, 56043, 118847, 3979, 38337];
+  tokenInitalNonce: Array<number> = [37391, 30194, 19102, 44549, 129242];
   initalAmounts: Array<number> = [500, 250, 50, 40, 10,
                                    15, 10, 10, 10, 10,
                                    12, 11, 16, 30, 20,
@@ -60,9 +60,9 @@ export class BlockchainComponent implements OnInit {
     for (let i = 0; i < this.blockChainLength; i++) {
       let block = null;
       if (this.mode === Mode.Tokens) {
-         block = new Block((i + 1), this.timeStamp, JSON.stringify(this.buildTransaction(i)), this.tokenInitalNonce[i], previuseHash);
+         block = new Block(i, this.timeStamp, JSON.stringify(this.buildTransaction(i)), this.tokenInitalNonce[i], previuseHash);
       } else {
-        block = new Block((i + 1), this.timeStamp, '', this.initalNonce[i], previuseHash);
+        block = new Block(i, this.timeStamp, '', this.initalNonce[i], previuseHash);
       }
 
       block.CalculateHash();
@@ -72,10 +72,10 @@ export class BlockchainComponent implements OnInit {
   }
 
   onBlockChanged(block: Block) {
-    this.blockChain[block.index - 1] = new Block(block.index, this.timeStamp, block.Data, block.Nonce, block.PreviouseHash);
-    this.blockChain[block.index - 1].CalculateHash();
-    for (let i = block.index; i < this.blockChainLength; i++) {
-      this.blockChain[i] = new Block((i + 1), this.timeStamp, this.blockChain[i].Data, this.initalNonce[i], this.blockChain[i - 1].Hash);
+    this.blockChain[block.index] = new Block(block.index, this.timeStamp, block.Data, block.Nonce, block.PreviouseHash);
+    this.blockChain[block.index].CalculateHash();
+    for (let i = block.index + 1; i < this.blockChainLength; i++) {
+      this.blockChain[i] = new Block(i, this.timeStamp, this.blockChain[i].Data, this.blockChain[i].Nonce, this.blockChain[i - 1].Hash);
       this.blockChain[i].CalculateHash();
     }
   }
