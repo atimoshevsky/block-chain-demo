@@ -12,7 +12,7 @@
       <th scope="row" style="vertical-align:middle;">{{transaction.id +1}}</th>
       <td>
         <mat-form-field appearance="outline">
-          <input matInput placeholder="amount" value="{{transaction.amount}}" (keyup)="onDataKey($event)">
+          <input matInput placeholder="amount" value="{{transaction.amount}}" (keyup)="onDataKey($event)" id="{{transaction.id}}">
           <mat-hint>$, amount</mat-hint>
         </mat-form-field>
       </td>

@@ -17,7 +17,7 @@
 
   <div *ngIf="mode === 4">
     <label>Data</label>
-    <app-simple-block-data-table [blockTransactions]='block.Data'></app-simple-block-data-table>
+    <app-simple-block-data-table [blockTransactions]='block.Data' (transactionChanged)="onTransactionChanged($event)"></app-simple-block-data-table>
   </div>
 
   <div class="form-group" *ngIf="isPreviouseHash">

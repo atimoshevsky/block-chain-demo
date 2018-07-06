@@ -13,9 +13,41 @@ export class BlockchainComponent implements OnInit {
   @Input() blockchainTitle = 'Blockchain';
   blockChain: Array<Block>;
   initalNonce: Array<number> = [28343, 152168, 101917, 67021, 17682];
-  initalNames: Array<string> = ['Vika', 'Adam', 'Gerry', 'Lukasz', 'Misha', 'Varvara',
-    'Wojciech', 'Tim', 'Allan', 'James', 'Marcin', 'Tomasz', 'Mariusz', 'Dimitri', 'Kasper', 'Julia',
-    'Sveta'];
+  tokenInitalNonce: Array<number> = [78050, 22310, 39892, 5275, 88690];
+  initalAmounts: Array<number> = [500, 250, 50, 40, 10,
+                                   15, 10, 10, 10, 10,
+                                   12, 11, 16, 30, 20,
+                                   10, 5, 4, 7, 9,
+                                   4, 3, 1, 3, 4
+                                  ];
+  initalNames: Array<Array<string>> = [
+                                       ['Credit Suisse', 'Alex'],
+                                       ['Alex', 'Vika'],
+                                       ['Alex', 'Michal'],
+                                       ['Alex', 'Varvara'],
+                                       ['Alex', 'Oleksii'],
+                                       ['Vika', 'Lida'],
+                                       ['Vika', 'Valera'],
+                                       ['Vika', 'Tania'],
+                                       ['Vika', 'Michal'],
+                                       ['Vika', 'Nadia'],
+                                       ['Alex', 'Wojciech'],
+                                       ['Wojciech', 'Lukasz'],
+                                       ['Lukasz', 'Tomasz'],
+                                       ['Tomasz', 'Alex'],
+                                       ['Gerry', 'Toby'],
+                                       ['Toby', 'Simon'],
+                                       ['Simon', 'Tim'],
+                                       ['Tim', 'Colin'],
+                                       ['Colin', 'Robert'],
+                                       ['Robert', 'Gerry'],
+                                       ['Alex', 'Vika'],
+                                       ['Alex', 'Vika'],
+                                       ['Alex', 'Vika'],
+                                       ['Alex', 'Vika'],
+                                       ['Alex', 'Vika'],
+    ]
+  ;
   timeStamp = '2018/06/18';
   blockChainLength = 5;
 
@@ -28,7 +60,7 @@ export class BlockchainComponent implements OnInit {
     for (let i = 0; i < this.blockChainLength; i++) {
       let block = null;
       if (this.mode === Mode.Tokens) {
-         block = new Block((i + 1), this.timeStamp, JSON.stringify(this.buildTransaction()), this.initalNonce[i], previuseHash);
+         block = new Block((i + 1), this.timeStamp, JSON.stringify(this.buildTransaction(i)), this.tokenInitalNonce[i], previuseHash);
       } else {
         block = new Block((i + 1), this.timeStamp, '', this.initalNonce[i], previuseHash);
       }
@@ -52,21 +84,17 @@ export class BlockchainComponent implements OnInit {
     return block.index;
   }
 
-  buildTransaction(): Array<BlockTransaction> {
+  buildTransaction(blockNumber: number): Array<BlockTransaction> {
     const transactionCount = 5;
     const transactions = new Array<BlockTransaction>();
     for (let i = 0; i < transactionCount; i++) {
       let transaction = null;
-      transaction = new BlockTransaction(i, this.randomInt(10, 95),
-                                          this.initalNames[this.randomInt(0, 16)],
-                                          this.initalNames[this.randomInt(0, 16)]);
+      transaction = new BlockTransaction(i, this.initalAmounts[blockNumber * transactionCount + i],
+                                          this.initalNames[blockNumber * transactionCount + i][0],
+                                          this.initalNames[blockNumber * transactionCount + i][1]);
       transactions.push(transaction);
     }
     return transactions;
 
-  }
-
-  randomInt(min, max): number {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 }

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Output, Input, OnInit, EventEmitter } from '@angular/core';
 import { BlockTransaction } from '../../../core/block-transaction';
 
 @Component({
@@ -8,6 +8,7 @@ import { BlockTransaction } from '../../../core/block-transaction';
 })
 export class SimpleBlockDataTableComponent implements OnInit {
   @Input() blockTransactions: string;
+  @Output() transactionChanged = new EventEmitter<string>();
   transactions: Array<BlockTransaction>;
 
   constructor() { }
@@ -22,8 +23,7 @@ export class SimpleBlockDataTableComponent implements OnInit {
   }
 
   onDataKey(event: any) {
-    console.log(event);
+    this.transactions[event.target.id].amount = +event.target.value;
+    this.transactionChanged.emit(JSON.stringify(this.transactions));
   }
-
-
 }
