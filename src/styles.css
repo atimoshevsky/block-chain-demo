@@ -40,6 +40,7 @@ h2 {
     display: inline-block; 
     width: 45%;
     position: relative;
+    vertical-align: top;
 }
 .block-container-content-error
 {

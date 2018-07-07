@@ -13,7 +13,7 @@ export class BlockchainComponent implements OnInit {
   @Input() blockchainTitle = 'Blockchain';
   blockChain: Array<Block>;
   initalNonce: Array<number> = [85817, 56043, 118847, 3979, 38337];
-  tokenInitalNonce: Array<number> = [37391, 30194, 19102, 44549, 129242];
+  tokenInitalNonce: Array<number> = [48623, 209816, 91548, 12577, 3068];
   initalAmounts: Array<number> = [555.55, 250.15, 50.45, 40.32, 10.19,
                                    15.01, 10.20, 14.34, 10.23, 10.11,
                                    12.54, 11.12, 16.43, 30.12, 20.43,
@@ -85,8 +85,9 @@ export class BlockchainComponent implements OnInit {
   }
 
   buildTransaction(blockNumber: number): Array<BlockTransaction> {
-    const transactionCount = 5;
+    const transactionCount = 5 % blockNumber === 1 ? blockNumber : 3;
     const transactions = new Array<BlockTransaction>();
+
     for (let i = 0; i < transactionCount; i++) {
       let transaction = null;
       transaction = new BlockTransaction(i, this.initalAmounts[blockNumber * transactionCount + i],
