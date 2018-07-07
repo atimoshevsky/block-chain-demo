@@ -1,22 +1,16 @@
 <table class="table table-hover table-bordered table-striped" style="background-color: white !important;">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">$, Amount</th>
-      <th scope="col">From</th>
-      <th scope="col">To</th>
-    </tr>
-  </thead>
+  
   <tbody>
-    <tr *ngFor="let transaction of transactions; trackBy: trackByTransaction" style="height: 10px;">
-      <th scope="row" style="vertical-align:middle;">{{transaction.id +1}}</th>
-      <td>
-        <mat-form-field appearance="outline">
-          <input matInput placeholder="amount" value="{{transaction.amount}}" (keyup)="onDataKey($event)" id="{{transaction.id}}">
-          <mat-hint>$, amount</mat-hint>
-        </mat-form-field>
+    <tr *ngFor="let transaction of transactions; trackBy: trackByTransaction">
+      <th scope="row" style="vertical-align:middle;">$</th>
+      <td style="width: 30%;vertical-align:middle;text-align: center;">
+          <div class="form-group">
+              <input type="text" class="form-control" id="formGroupExampleInput" placeholder="amount" value="{{transaction.amount}}" (keyup)="onDataKey($event)" id="{{transaction.id}}">
+          </div>
       </td>
+      <td style="vertical-align:middle;">From:</td>
       <td style="vertical-align:middle;">{{transaction.from}}</td>
+      <td style="vertical-align:middle;">To:</td>
       <td style="vertical-align:middle;">{{transaction.to}}</td>
     </tr>
   </tbody>

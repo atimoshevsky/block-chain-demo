@@ -1,32 +1,32 @@
 <div [ngClass]="{'border-primary': true, 'blockchain-container': true, 'blockchain-container-error': !mined}" name="simpleblock">
   <mat-icon [style.color]="mined ? '': 'red'" matSuffix>{{sentiment}}</mat-icon>
   <div class="form-group">
-    <label>Block,#</label>
+    <label>Block,#:</label>
     <input type="text" class="form-control" value="{{block.index + 1}}" readonly>
   </div>
 
   <div class="form-group">
-    <label>Nonce</label>
+    <label>Nonce:</label>
     <input type="text" class="form-control" placeholder="Nonce" [(ngModel)]="block.Nonce" (keyup)="onNonceKey($event)">
   </div>
 
   <div class="form-group" *ngIf="mode !== 4">
-    <label>Data</label>
+    <label>Data:</label>
     <textarea class="form-control" placeholder="Data" [(ngModel)]="block.Data" rows="10" (keyup)="onDataKey($event)"></textarea>
   </div>
 
   <div *ngIf="mode === 4">
-    <label>Data</label>
+    <label>Tx:</label>
     <app-simple-block-data-table [blockTransactions]='block.Data' (transactionChanged)="onTransactionChanged($event)"></app-simple-block-data-table>
   </div>
 
   <div class="form-group" *ngIf="isPreviouseHash">
-    <label>Previous Hash</label>
+    <label>Previous Hash:</label>
     <input type="text" class="form-control" placeholder="Previous Hash" [value]="block.PreviouseHash" readonly>
   </div>
 
   <div class="form-group">
-    <label>Hash</label>
+    <label>Hash:</label>
     <input type="text" class="form-control" placeholder="Hash" [(ngModel)]="block.Hash" readonly [style.color]="mined ? '': 'red'">
   </div>
 </div>

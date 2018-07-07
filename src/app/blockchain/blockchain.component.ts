@@ -14,11 +14,11 @@ export class BlockchainComponent implements OnInit {
   blockChain: Array<Block>;
   initalNonce: Array<number> = [85817, 56043, 118847, 3979, 38337];
   tokenInitalNonce: Array<number> = [37391, 30194, 19102, 44549, 129242];
-  initalAmounts: Array<number> = [500, 250, 50, 40, 10,
-                                   15, 10, 10, 10, 10,
-                                   12, 11, 16, 30, 20,
-                                   10, 5, 4, 7, 9,
-                                   4, 3, 1, 3, 4
+  initalAmounts: Array<number> = [555.55, 250.15, 50.45, 40.32, 10.19,
+                                   15.01, 10.20, 14.34, 10.23, 10.11,
+                                   12.54, 11.12, 16.43, 30.12, 20.43,
+                                   10.12, 5.43, 4.54, 7.23, 9.54,
+                                   4.12, 3.65, 1.45, 3.23, 4.34
                                   ];
   initalNames: Array<Array<string>> = [
                                        ['Credit Suisse', 'Alex'],

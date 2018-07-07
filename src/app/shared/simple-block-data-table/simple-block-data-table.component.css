@@ -1,0 +1,11 @@
+.form-group input{
+    width: 100%;
+  }
+
+  .form-group {
+      margin-bottom: 10px;
+  }
+
+  .table-bordered td, .table-bordered th {
+      padding-bottom: 0;
+  }
