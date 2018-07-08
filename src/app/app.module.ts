@@ -51,6 +51,7 @@ import { SimpleBlockComponent } from './shared/simple-block/simple-block.compone
 import { DistributedBlockchainComponent } from './distributed-blockchain/distributed-blockchain.component';
 import { TokenComponent } from './token/token.component';
 import { SimpleBlockDataTableComponent } from './shared/simple-block-data-table/simple-block-data-table.component';
+import { CoinbaseComponent } from './coinbase/coinbase.component';
 
 
 
@@ -63,7 +64,8 @@ import { SimpleBlockDataTableComponent } from './shared/simple-block-data-table/
     SimpleBlockComponent,
     DistributedBlockchainComponent,
     TokenComponent,
-    SimpleBlockDataTableComponent
+    SimpleBlockDataTableComponent,
+    CoinbaseComponent
   ],
   imports: [
     CommonModule,
@@ -112,6 +114,7 @@ import { SimpleBlockDataTableComponent } from './shared/simple-block-data-table/
       { path: 'blockchain', component: BlockchainComponent},
       { path: 'distributed', component: DistributedBlockchainComponent},
       { path: 'tokens', component: TokenComponent},
+      { path: 'coinbase', component: CoinbaseComponent},
       { path: '', component: HashComponent},
       { path: '**', redirectTo: 'welcome', pathMatch: 'full'}
     ])
