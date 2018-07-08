@@ -10,12 +10,26 @@
     <input type="text" class="form-control" placeholder="Nonce" [(ngModel)]="block.Nonce" (keyup)="onNonceKey($event)">
   </div>
 
-  <div class="form-group" *ngIf="mode !== 4">
+  <div class="form-group" *ngIf="mode === 5">
+    <label style="font-weight: bold;">Coinbase:</label>
+    <table class="table table-bordered" style="background-color: white !important;">
+      <tbody>
+        <tr>
+          <th scope="row" style="width:40px; background-color:rgba(0,0,0,.05); vertical-align:middle;">$</th>
+          <td style="vertical-align:middle;text-align: center;">100.00</td>
+          <td style="vertical-align:middle;">To:</td>
+          <td style="vertical-align:middle;">Alex</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <div class="form-group" *ngIf="mode === 1 || mode === 2 || mode === 3">
     <label>Data:</label>
     <textarea class="form-control" placeholder="Data" [(ngModel)]="block.Data" rows="10" (keyup)="onDataKey($event)"></textarea>
   </div>
 
-  <div *ngIf="mode === 4">
+  <div *ngIf="mode === 4 || mode === 5">
     <label>Tx:</label>
     <app-simple-block-data-table [blockTransactions]='block.Data' (transactionChanged)="onTransactionChanged($event)"></app-simple-block-data-table>
   </div>

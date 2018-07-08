@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { BlockTransaction } from '../../core/block-transaction';
 import { Mode } from '../../core/mode';
 
 
