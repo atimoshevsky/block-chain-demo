@@ -22,7 +22,8 @@ export class SimpleBlockComponent implements OnChanges, OnInit {
   }
 
   ngOnInit() {
-    this.isPreviouseHash = (this.mode === Mode.BlockChain || this.mode === Mode.Tokens || this.mode === Mode.CoinBase);
+    this.isPreviouseHash = (this.mode === Mode.Distributed || this.mode === Mode.BlockChain ||
+      this.mode === Mode.Tokens || this.mode === Mode.CoinBase);
     this.refresh();
   }
 

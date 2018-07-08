@@ -29,7 +29,11 @@ export class BlockchainComponent implements OnInit {
     for (let i = 0; i < this.blockChainLength; i++) {
       let block = null;
       if (this.mode === Mode.Tokens || this.mode === Mode.CoinBase) {
-        block = new Block(i, this.timeStamp, JSON.stringify(this.buildTransaction(i)), this.tokenInitalNonce[i], previuseHash);
+        if (i === 0 && this.mode === Mode.CoinBase) {
+          block = new Block(i, this.timeStamp, JSON.stringify(new Array<BlockTransaction>()), this.tokenInitalNonce[i], previuseHash);
+        } else {
+          block = new Block(i, this.timeStamp, JSON.stringify(this.buildTransaction(i)), this.tokenInitalNonce[i], previuseHash);
+        }
       } else {
         block = new Block(i, this.timeStamp, '', this.initalNonce[i], previuseHash);
       }
