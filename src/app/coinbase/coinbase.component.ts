@@ -9,7 +9,7 @@ import { Mode } from '../../core/mode';
 })
 export class CoinbaseComponent implements OnInit {
   mode: Mode =  Mode.CoinBase;
-  tokenInitalNonce: Array<number> = [29667, 54458, 13356, 28611, 13739];
+  tokenInitalNonce: Array<number> = [29667, 54458, 13356, 15752, 153048];
   tokenInitalAmounts: Array<number> = [50, 50, 50, 50, 45,
     40, 35, 30, 10, 10,
     10, 10, 10, 30, 20,
