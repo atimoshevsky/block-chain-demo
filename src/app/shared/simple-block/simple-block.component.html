@@ -1,5 +1,5 @@
 <div [ngClass]="{'border-primary': true, 'blockchain-container': true, 'blockchain-container-error': !mined}" name="simpleblock">
-  <mat-icon [style.color]="mined ? '': 'red'" matSuffix>{{sentiment}}</mat-icon>
+<!--  <mat-icon [style.color]="mined ? '': 'red'" matSuffix>{{sentiment}}</mat-icon> -->
   <div class="form-group">
     <label>Block,#:</label>
     <input type="text" class="form-control" value="{{block.index + 1}}" readonly>
